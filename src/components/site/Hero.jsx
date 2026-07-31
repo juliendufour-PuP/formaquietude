@@ -3,12 +3,18 @@ import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import MagneticButton from './MagneticButton';
+import BookingBackdrop from './BookingBackdrop';
 
 const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-white pt-32 pb-16 lg:pt-40 lg:pb-24">
+      <BookingBackdrop
+        baseColor="#2a1f61"
+        gradientColors={['#ff6b00', '#ff6b00', '#2a1f61']}
+        opacityClass="opacity-60"
+      />
       <img
         src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/659c19b0e_logo-formaquietude.png"
         alt=""
