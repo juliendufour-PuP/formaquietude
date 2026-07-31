@@ -27,8 +27,7 @@ export default function Hero() {
           </h1>
           <p className="mt-7 text-[17px] leading-relaxed text-[#2a1f61]/70 max-w-xl">
             École de massage bien-être : devenez praticienne en massage professionnel en quelques jours de pratique
-            intensive. Idéal reconversion ou perfectionnement esthéticienne — groupes de 8 personnes maximum,
-            80 % de temps sur table.
+            intensive. Idéal reconversion ou perfectionnement esthéticienne.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
