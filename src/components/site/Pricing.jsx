@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, X } from 'lucide-react';
 import SectionHeading from './SectionHeading';
+import BookingBackdrop from './BookingBackdrop';
 
 const common = [
   '10 formations aux techniques de massage — 223 h',
@@ -45,8 +46,9 @@ const plans = [
 
 export default function Pricing({ onSelect }) {
   return (
-    <section id="financement" className="bg-[#f4f4f9] py-24 lg:py-32">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+    <section id="financement" className="bg-[#f4f4f9] py-24 lg:py-32 relative overflow-hidden">
+      <BookingBackdrop baseColor="#2a1f61" gradientColors={['#ff6b00', '#ff6b00', '#2a1f61']} opacityClass="opacity-50" top="6%" />
+      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8">
         <SectionHeading
           eyebrow="Parcours & tarifs"
           title="2 parcours pour devenir Praticien en massage bien-être"

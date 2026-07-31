@@ -49,10 +49,12 @@ export default function Home() {
         onSelect={(title) => setDialog({ title, sessionId: '', kind: 'rappel' })}
       />
       <Method />
-      <BookingCalendar
-        sessions={sessions}
-        onReserve={(s) => setDialog({ title: s.formation_title, sessionId: s.id, kind: 'reservation' })}
-      />
+      <div className="hidden">
+        <BookingCalendar
+          sessions={sessions}
+          onReserve={(s) => setDialog({ title: s.formation_title, sessionId: s.id, kind: 'reservation' })}
+        />
+      </div>
       <Pricing onSelect={(title) => setDialog({ title, sessionId: '', kind: 'rappel' })} />
       <ProofTicker testimonials={testimonials} />
       <Faq />
