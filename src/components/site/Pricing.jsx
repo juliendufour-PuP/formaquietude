@@ -62,7 +62,11 @@ export default function Pricing({ onSelect }) {
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
             className={`relative rounded-[26px] p-8 sm:p-10 border ${p.featured ? 'bg-[#2a1f61] border-[#2a1f61] text-white shadow-[0_40px_80px_-40px_rgba(42,31,97,0.7)]' : 'bg-white border-[#2a1f61]/10'}`}>
-            
+
+              <span className={`absolute top-5 right-5 rounded-full px-3 py-1.5 text-[11px] font-semibold tracking-[0.06em] ${p.featured ? 'bg-white/15 text-white' : 'bg-[#2a1f61]/8 text-[#2a1f61]'}`}>
+                En présentiel à Grenoble
+              </span>
+
               {p.featured &&
             <span className="absolute -top-3 left-8 rounded-full bg-[#ff6b00] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white hidden">
                   Le plus complet
@@ -73,8 +77,8 @@ export default function Pricing({ onSelect }) {
               </h3>
               <p className={`mt-4 text-[15.5px] leading-relaxed ${p.featured ? 'text-white/70' : 'text-[#2a1f61]/65'}`}>{p.desc}</p>
 
-              <div className="mt-7 flex flex-col gap-1">
-                <div className="flex items-end gap-2">
+              <div className="mt-7 flex flex-col items-center gap-1 text-center">
+                <div className="flex items-end justify-center gap-2">
                   <span className={`font-display text-5xl font-semibold ${p.featured ? 'text-white' : 'text-[#2a1f61]'}`}>{p.price}</span>
                   <span className={`mb-2 text-[13px] ${p.featured ? 'text-white/60' : 'text-[#2a1f61]/50'}`}>TTC</span>
                 </div>
