@@ -37,7 +37,7 @@ const MASSAGES = [
 
 export default function MassageCarousel({ onSelect }) {
   return (
-    <section id="massages" className="relative bg-[#f6f6fb] py-12 lg:py-14 overflow-hidden">
+    <section id="massages" className="relative bg-[#2a1f61] py-12 lg:py-14 overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -48,7 +48,7 @@ export default function MassageCarousel({ onSelect }) {
           <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff6b00] mb-5">
             Les massages à la carte
           </p>
-          <h2 className="font-display text-[1.9rem] sm:text-[2.6rem] font-semibold text-[#2a1f61] leading-[1.1] max-w-3xl mx-auto text-balance">
+          <h2 className="font-display text-[1.9rem] sm:text-[2.6rem] font-semibold text-white leading-[1.1] max-w-3xl mx-auto text-balance">
             Les différents types de massages bien-être enseignés dans notre centre
           </h2>
         </motion.div>

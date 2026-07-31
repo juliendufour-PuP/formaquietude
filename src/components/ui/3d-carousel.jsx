@@ -83,22 +83,22 @@ export function ThreeDPhotoCarousel({ cards = [], onSelect }) {
               transform: `rotateY(${i * step}deg) translateZ(${radius}px)`,
             }}
           >
-            <div className="flex h-full w-full flex-col overflow-hidden rounded-xl bg-[#2a1f61] shadow-[0_14px_32px_rgba(42,31,97,0.22)]">
+            <div className="flex h-full w-full flex-col overflow-hidden rounded-xl bg-white shadow-[0_14px_32px_rgba(0,0,0,0.35)]">
               <img
                 src={card.image}
                 alt={card.title}
                 draggable={false}
                 className="block h-[130px] w-full object-cover"
               />
-              <div className="flex flex-1 items-center justify-center px-2 text-center text-[10.5px] font-semibold leading-tight text-white">
+              <div className="flex flex-1 items-center justify-center px-2 text-center text-[10.5px] font-semibold leading-tight text-[#2a1f61]">
                 {card.title}
               </div>
             </div>
           </div>
         ))}
       </div>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-[120px] bg-gradient-to-r from-[#f6f6fb] to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-[120px] bg-gradient-to-l from-[#f6f6fb] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-[120px] bg-gradient-to-r from-[#2a1f61] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-[120px] bg-gradient-to-l from-[#2a1f61] to-transparent" />
     </div>
   );
 }
