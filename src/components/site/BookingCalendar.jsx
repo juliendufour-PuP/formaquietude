@@ -4,6 +4,7 @@ import { format, differenceInCalendarDays } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { ChevronLeft, ChevronRight, MapPin, Users, ArrowRight } from 'lucide-react';
 import SectionHeading from './SectionHeading';
+import BookingBackdrop from './BookingBackdrop';
 
 export default function BookingCalendar({ sessions, onReserve }) {
   const [selected, setSelected] = useState(sessions[0]?.id || null);
@@ -14,6 +15,7 @@ export default function BookingCalendar({ sessions, onReserve }) {
 
   return (
     <section id="dates" className="bg-[#2a1f61] py-24 lg:py-32 relative overflow-hidden">
+      <BookingBackdrop />
       <span className="pointer-events-none select-none absolute right-0 top-10 font-display text-[14vw] leading-none text-white/[0.04] hidden lg:block">Calme</span>
       <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
