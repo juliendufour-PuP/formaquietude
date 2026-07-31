@@ -37,9 +37,9 @@ export default function MethodEnfant() {
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
               <div className="flex-1">
                 <div className="flex items-center gap-3">
-                  <span className="flex items-center justify-center w-11 h-11 rounded-full bg-[#ff6b00]/15 text-[#ff6b00] hidden">
-                    <Users className="w-5 h-5" />
-                  </span>
+                  
+
+                  
                   <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff6b00]">
                     À qui s’adressent ces formations
                   </p>
