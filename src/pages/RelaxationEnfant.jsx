@@ -5,7 +5,7 @@ import ScrollProgress from '@/components/site/ScrollProgress';
 import Navbar from '@/components/site/Navbar';
 import HeroEnfant from '@/components/site/HeroEnfant';
 import EnfantFormations from '@/components/site/EnfantFormations';
-import Method from '@/components/site/Method';
+import MethodEnfant from '@/components/site/MethodEnfant';
 import ProofTicker from '@/components/site/ProofTicker';
 import Faq from '@/components/site/Faq';
 import ContactSection from '@/components/site/ContactSection';
@@ -33,7 +33,7 @@ export default function RelaxationEnfant() {
       <Navbar />
       <HeroEnfant />
       <EnfantFormations onSelect={(title) => setDialog({ title, kind: 'rappel' })} />
-      <Method />
+      <MethodEnfant />
       <ProofTicker testimonials={testimonials} />
       <Faq />
       <ContactSection formations={TITLES} />
