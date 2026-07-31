@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, X, Sparkles } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
 const common = [
@@ -26,7 +26,7 @@ const plans = [
   {
     title: 'Devenir Praticien en massage bien-être',
     desc: 'Le cursus complet pour maîtriser les techniques essentielles du massage bien-être, développer votre posture professionnelle et exercer avec confiance.',
-    price: '4 000 €',
+    price: '4 605 €',
     cta: 'Découvrir le parcours métier',
     featured: false,
     items: [...common, ...payment].map((t) => ({ t, on: true })),
@@ -35,10 +35,10 @@ const plans = [
   {
     title: 'Devenir Praticien et lancer son activité',
     desc: 'Le parcours tout-en-un pour apprendre votre métier, développer votre savoir-faire et construire une activité professionnelle solide et pérenne.',
-    price: '4 000 €',
+    price: '4 990 €',
     cta: 'Découvrir le cursus complet',
     featured: true,
-    items: [...common.map((t) => ({ t, on: true })), ...extras.map((t) => ({ t, on: true, plus: true })), ...payment.map((t) => ({ t, on: true }))],
+    items: [...extras.map((t) => ({ t, on: true, plus: true })), ...common.map((t) => ({ t, on: true })), ...payment.map((t) => ({ t, on: true }))],
     missing: [],
   },
 ];
@@ -78,18 +78,20 @@ export default function Pricing({ onSelect }) {
                 <span className={`mb-2 text-[13px] ${p.featured ? 'text-white/60' : 'text-[#2a1f61]/50'}`}>TTC</span>
               </div>
 
-              <div className="mt-6 flex items-center gap-4">
-                <img
-                  src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/264d6736b_image.png"
-                  alt="Éligible Mon Compte Formation"
-                  className="h-[62px] w-auto rounded-lg bg-white p-1"
-                />
-                <img
-                  src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/22ccf1530_image.png"
-                  alt="Qualiopi — processus certifié"
-                  className="h-[50px] w-auto rounded-lg bg-white p-1"
-                />
-              </div>
+              {p.featured && (
+                <div className="mt-6 flex items-center gap-4">
+                  <img
+                    src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/264d6736b_image.png"
+                    alt="Éligible Mon Compte Formation"
+                    className="h-[62px] w-auto rounded-lg bg-white p-1"
+                  />
+                  <img
+                    src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/22ccf1530_image.png"
+                    alt="Qualiopi — processus certifié"
+                    className="h-[50px] w-auto rounded-lg bg-white p-1"
+                  />
+                </div>
+              )}
 
               <button
                 onClick={() => onSelect && onSelect(p.title)}
@@ -98,13 +100,7 @@ export default function Pricing({ onSelect }) {
                 {p.cta}
               </button>
 
-              {p.featured && (
-                <p className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#ff6b00]/15 px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#ff6b00]">
-                  <Sparkles className="w-3.5 h-3.5" /> Tout le parcours métier + 3 atouts business
-                </p>
-              )}
-
-              <ul className={`space-y-3 ${p.featured ? 'mt-6' : 'mt-8'}`}>
+              <ul className="mt-8 space-y-3">
                 {p.items.map((it) => (
                   <li
                     key={it.t}
