@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { Check, X, Sparkles } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
 const common = [
@@ -14,6 +14,14 @@ const common = [
   'Certification « Praticien en massage bien-être »',
 ];
 
+const payment = ['Paiement possible en 3, 4 ou 10 fois', '10 % d’avantage sur vos prochaines formations'];
+
+const extras = [
+  'Formation certifiante à la création d’entreprise',
+  'Certification RS 7004 pour structurer votre projet',
+  'Financement partiel possible avec le CPF',
+];
+
 const plans = [
   {
     title: 'Devenir Praticien en massage bien-être',
@@ -21,7 +29,8 @@ const plans = [
     price: '4 000 €',
     cta: 'Découvrir le parcours métier',
     featured: false,
-    items: [...common, 'Paiement possible en 3, 4 ou 10 fois', '10 % d’avantage sur vos prochaines formations'],
+    items: [...common, ...payment].map((t) => ({ t, on: true })),
+    missing: extras,
   },
   {
     title: 'Devenir Praticien et lancer son activité',
@@ -29,14 +38,8 @@ const plans = [
     price: '4 000 €',
     cta: 'Découvrir le cursus complet',
     featured: true,
-    items: [
-      ...common,
-      'Formation certifiante à la création d’entreprise',
-      'Certification RS 7004 pour structurer votre projet',
-      'Financement partiel possible avec le CPF',
-      'Paiement possible en 3, 4 ou 10 fois',
-      '10 % d’avantage sur vos prochaines formations',
-    ],
+    items: [...common.map((t) => ({ t, on: true })), ...extras.map((t) => ({ t, on: true, plus: true })), ...payment.map((t) => ({ t, on: true }))],
+    missing: [],
   },
 ];
 
@@ -95,10 +98,31 @@ export default function Pricing({ onSelect }) {
                 {p.cta}
               </button>
 
-              <ul className="mt-8 space-y-3">
+              {p.featured && (
+                <p className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#ff6b00]/15 px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#ff6b00]">
+                  <Sparkles className="w-3.5 h-3.5" /> Tout le parcours métier + 3 atouts business
+                </p>
+              )}
+
+              <ul className={`space-y-3 ${p.featured ? 'mt-6' : 'mt-8'}`}>
                 {p.items.map((it) => (
-                  <li key={it} className={`flex items-start gap-3 text-[14.5px] leading-snug ${p.featured ? 'text-white/80' : 'text-[#2a1f61]/75'}`}>
-                    <Check className="w-4 h-4 text-[#ff6b00] shrink-0 mt-0.5" /> {it}
+                  <li
+                    key={it.t}
+                    className={`flex items-start gap-3 text-[14.5px] leading-snug ${
+                      it.plus
+                        ? 'rounded-xl bg-[#ff6b00]/15 px-3 py-2 font-semibold text-white'
+                        : p.featured
+                        ? 'text-white/80'
+                        : 'text-[#2a1f61]/75'
+                    }`}
+                  >
+                    <Check className={`w-4 h-4 shrink-0 mt-0.5 ${it.plus ? 'text-[#ff6b00]' : p.featured ? 'text-white/50' : 'text-[#2a1f61]/35'}`} />
+                    {it.t}
+                  </li>
+                ))}
+                {p.missing.map((m) => (
+                  <li key={m} className="flex items-start gap-3 text-[14.5px] leading-snug text-[#2a1f61]/35 line-through">
+                    <X className="w-4 h-4 shrink-0 mt-0.5 text-[#2a1f61]/25" /> {m}
                   </li>
                 ))}
               </ul>
