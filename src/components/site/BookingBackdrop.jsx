@@ -10,8 +10,8 @@ export default function BookingBackdrop({
     <div
       className={`pointer-events-none absolute inset-0 overflow-hidden ${opacityClass}`}
       style={{
-        maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
-        WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
+        maskImage: 'linear-gradient(to right, black 0%, black 85%, transparent)',
+        WebkitMaskImage: 'linear-gradient(to right, black 0%, black 85%, transparent)',
       }}
     >
       <div className="absolute left-0 w-full top-[38%]">
@@ -23,7 +23,8 @@ export default function BookingBackdrop({
           gradientColors={gradientColors}
           animationDuration={4.4}
           strokeWidth={5}
-          className="mx-auto"
+          fluid
+          className="w-full"
         />
       </div>
     </div>

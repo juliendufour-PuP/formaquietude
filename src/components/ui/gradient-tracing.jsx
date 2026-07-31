@@ -10,12 +10,19 @@ export function GradientTracing({
   strokeWidth = 2,
   path = `M0,${height / 2} L${width},${height / 2}`,
   className = '',
+  fluid = false,
 }) {
   const gradientId = `pulse-${useId().replace(/:/g, '')}`;
 
   return (
-    <div className={`relative ${className}`} style={{ width, height }}>
-      <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} fill="none">
+    <div className={`relative ${className}`} style={{ width: fluid ? '100%' : width, height }}>
+      <svg
+        width={fluid ? '100%' : width}
+        height={height}
+        viewBox={`0 0 ${width} ${height}`}
+        preserveAspectRatio={fluid ? 'none' : undefined}
+        fill="none"
+      >
         <path d={path} stroke={baseColor} strokeOpacity="0.15" strokeWidth={strokeWidth} />
         <path d={path} stroke={`url(#${gradientId})`} strokeLinecap="round" strokeWidth={strokeWidth} />
         <defs>
