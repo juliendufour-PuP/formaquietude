@@ -12,8 +12,6 @@ import Pricing from '@/components/site/Pricing';
 import ProofTicker from '@/components/site/ProofTicker';
 import Faq from '@/components/site/Faq';
 import ContactSection from '@/components/site/ContactSection';
-import StickyCallBar from '@/components/site/StickyCallBar';
-
 import LeadForm from '@/components/site/LeadForm';
 
 export default function Home() {
@@ -63,7 +61,6 @@ export default function Home() {
       <ProofTicker testimonials={testimonials} />
       <Faq />
       <ContactSection formations={titles} />
-      <StickyCallBar />
 
       <Dialog open={!!dialog} onOpenChange={(o) => !o && setDialog(null)}>
         <DialogContent className="max-w-lg rounded-[24px] p-7 max-h-[92vh] overflow-y-auto">

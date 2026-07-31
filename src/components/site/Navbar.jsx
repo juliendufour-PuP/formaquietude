@@ -34,9 +34,18 @@ export default function Navbar() {
             </a>
           ))}
         </nav>
-        <a href="#rappel" className="inline-flex items-center gap-2 rounded-full bg-[#ff6b00] px-5 py-2.5 text-[13px] font-semibold text-white hover:brightness-95 transition">
-          <Phone className="w-3.5 h-3.5" /> Être recontactée
-        </a>
+        <div className="flex items-center gap-3">
+          <a
+            href="tel:+33476228043"
+            aria-label="Appeler le centre FormaQuiétude"
+            className="inline-flex items-center justify-center rounded-full border border-[#2a1f61]/15 bg-white/70 px-3.5 py-2.5 text-[#2a1f61] hover:border-[#ff6b00] hover:text-[#ff6b00] transition"
+          >
+            <Phone className="w-4 h-4" />
+          </a>
+          <a href="#rappel" className="inline-flex items-center gap-2 rounded-full bg-[#ff6b00] px-5 py-2.5 text-[13px] font-semibold text-white hover:brightness-95 transition">
+            Être recontactée
+          </a>
+        </div>
       </div>
     </header>
   );
