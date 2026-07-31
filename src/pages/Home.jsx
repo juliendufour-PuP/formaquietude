@@ -4,7 +4,7 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import ScrollProgress from '@/components/site/ScrollProgress';
 import Navbar from '@/components/site/Navbar';
 import Hero from '@/components/site/Hero';
-import TrustStrip from '@/components/site/TrustStrip';
+import MassageField from '@/components/site/MassageField';
 import Curriculum from '@/components/site/Curriculum';
 import Method from '@/components/site/Method';
 import BookingCalendar from '@/components/site/BookingCalendar';
@@ -42,7 +42,7 @@ export default function Home() {
       <ScrollProgress />
       <Navbar />
       <Hero />
-      <TrustStrip />
+      <MassageField />
       <Curriculum
         formations={formations}
         sessions={sessions}
