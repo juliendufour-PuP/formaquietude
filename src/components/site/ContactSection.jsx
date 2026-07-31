@@ -7,7 +7,7 @@ import ContactBranding from './ContactBranding';
 export default function ContactSection({ formations }) {
   return (
     <section id="rappel" className="relative bg-[#2a1f61] py-24 lg:py-32 overflow-hidden">
-      <span className="pointer-events-none select-none absolute -left-6 bottom-4 font-display text-[15vw] leading-none text-white/[0.045] hidden lg:block">Savoir</span>
+
       <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
@@ -47,6 +47,15 @@ export default function ContactSection({ formations }) {
           <p className="text-[14.5px] text-[#2a1f61]/60 mb-7">Remplissez ce formulaire, nous faisons le reste.</p>
           <LeadForm source="rappel" formations={formations} />
         </motion.div>
+      </div>
+
+      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 mt-14 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-3 text-[13px] text-white/45">
+        <p>© {new Date().getFullYear()} Formaquiétude — Organisme de formation enregistré sous le n° 84 69 00000 69.</p>
+        <div className="flex gap-6">
+          <a href="#rappel" className="hover:text-[#ff6b00] transition-colors">Mentions légales</a>
+          <a href="#rappel" className="hover:text-[#ff6b00] transition-colors">Confidentialité</a>
+          <a href="#financement" className="hover:text-[#ff6b00] transition-colors">Accessibilité &amp; handicap</a>
+        </div>
       </div>
     </section>);
 

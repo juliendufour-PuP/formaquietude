@@ -13,7 +13,7 @@ import ProofTicker from '@/components/site/ProofTicker';
 import Faq from '@/components/site/Faq';
 import ContactSection from '@/components/site/ContactSection';
 import StickyCallBar from '@/components/site/StickyCallBar';
-import Footer from '@/components/site/Footer';
+
 import LeadForm from '@/components/site/LeadForm';
 
 export default function Home() {
@@ -59,7 +59,6 @@ export default function Home() {
       <ProofTicker testimonials={testimonials} />
       <Faq />
       <ContactSection formations={titles} />
-      <Footer />
       <StickyCallBar />
 
       <Dialog open={!!dialog} onOpenChange={(o) => !o && setDialog(null)}>
