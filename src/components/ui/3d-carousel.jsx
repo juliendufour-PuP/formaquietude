@@ -5,7 +5,7 @@ const transition = { duration: 0.15, ease: [0.32, 0.72, 0, 1] };
 
 const Cylinder = memo(({ cards, controls, onSelect }) => {
   const isSmall = typeof window !== 'undefined' && window.innerWidth <= 640;
-  const cylinderWidth = isSmall ? 1300 : 2600;
+  const cylinderWidth = isSmall ? 3200 : 7000;
   const faceCount = cards.length;
   const faceWidth = cylinderWidth / faceCount;
   const radius = cylinderWidth / (2 * Math.PI);
@@ -41,7 +41,7 @@ const Cylinder = memo(({ cards, controls, onSelect }) => {
             onClick={() => onSelect && onSelect(card)}
           >
             <motion.div
-              className="w-full overflow-hidden rounded-2xl bg-white shadow-[0_24px_50px_-25px_rgba(42,31,97,0.6)]"
+              className="w-full overflow-hidden rounded-[22px] bg-[#2a1f61] p-1.5 shadow-[0_30px_60px_-30px_rgba(42,31,97,0.65)]"
               initial={{ filter: 'blur(4px)' }}
               animate={{ filter: 'blur(0px)' }}
               transition={transition}
@@ -50,9 +50,9 @@ const Cylinder = memo(({ cards, controls, onSelect }) => {
                 src={card.image}
                 alt={card.title}
                 draggable={false}
-                className="pointer-events-none w-full aspect-[4/5] object-cover"
+                className="pointer-events-none w-full aspect-[4/3] rounded-[16px] object-cover"
               />
-              <p className="px-3 py-3 text-center text-[12.5px] font-semibold leading-snug text-[#2a1f61]">
+              <p className="px-3 pb-4 pt-4 text-[13px] font-bold leading-snug text-white">
                 {card.title}
               </p>
             </motion.div>
