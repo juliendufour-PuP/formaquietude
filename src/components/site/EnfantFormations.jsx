@@ -163,7 +163,7 @@ export default function EnfantFormations({ onSelect }) {
               </span>
                 <div className="flex items-start gap-5">
                   <div className="relative shrink-0 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-b from-[#ff8c1a] to-[#ff5e5e] shadow-[0_10px_24px_-8px_rgba(255,94,94,0.55)] ring-1 ring-white/30">
-                    <f.icon className="w-7 h-7 text-white drop-shadow-sm" strokeWidth={2.2} />
+                    <GraduationCap className="w-7 h-7 text-white drop-shadow-sm" strokeWidth={2.2} />
                     <Sparkle className="absolute -top-1 right-0 w-3 h-3 text-white fill-white" />
                     <Sparkle className="absolute -bottom-1 left-0 w-2.5 h-2.5 text-white fill-white" />
                   </div>
