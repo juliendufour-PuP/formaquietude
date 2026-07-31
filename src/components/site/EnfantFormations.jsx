@@ -74,32 +74,20 @@ export default function EnfantFormations({ onSelect }) {
               fittingType="fill" />
             <div className="absolute inset-0 bg-gradient-to-br from-[#2a1f61]/92 via-[#2a1f61]/88 to-[#402b8c]/82" />
 
+            <span className="absolute top-6 right-6 sm:top-8 sm:right-8 z-10 flex items-center justify-center w-[112px] h-[112px] sm:w-[132px] sm:h-[132px] rounded-full bg-[#ff6b00] text-center shadow-[0_18px_40px_-12px_rgba(0,0,0,0.5)] ring-4 ring-white/90 rotate-[-6deg]">
+              <span className="px-2 text-[10px] sm:text-[11px] leading-tight font-semibold uppercase tracking-[0.12em] text-white">
+                Une expertise unique en France
+              </span>
+            </span>
+
             <div className="relative h-full min-h-[480px] lg:min-h-[560px] flex flex-col justify-center gap-8 p-10 sm:p-14 lg:p-20 max-w-[1000px]">
               <div>
-                <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff8c1a] mb-5">
-                  Une expertise unique en France
-                </p>
                 <h2 className="font-display text-white text-[1.9rem] sm:text-[2.4rem] lg:text-[2.7rem] leading-[1.12] font-semibold text-balance">
                   Le seul centre en France à proposer des formations certifiantes RS éligibles au CPF en relaxation ludique pour enfants
                 </h2>
                 <p className="mt-6 text-[15px] sm:text-[16px] leading-relaxed text-white/80 max-w-[620px]">
                   Nos formations sont enregistrées au Répertoire Spécifique de France Compétences (RS 7530) et intégralement financables via votre CPF — sans avance de frais dans la majorité des cas.
                 </p>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-4">
-                <span className="rounded-xl bg-white px-5 py-2.5 shadow-[0_8px_24px_-10px_rgba(0,0,0,0.4)]">
-                  <img
-                    src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/264d6736b_image.png"
-                    alt="Éligible Mon Compte Formation"
-                    className="h-12 w-auto" />
-                </span>
-                <span className="rounded-xl bg-white px-6 py-2.5 shadow-[0_8px_24px_-10px_rgba(0,0,0,0.4)]">
-                  <img
-                    src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/22ccf1530_image.png"
-                    alt="Qualiopi — processus certifié"
-                    className="h-10 w-auto" />
-                </span>
               </div>
             </div>
           </motion.div>
