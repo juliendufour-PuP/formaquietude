@@ -40,14 +40,14 @@ export default function MethodEnfant() {
                   
 
                   
-                  <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff6b00]">
+                  <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff6b00] hidden">
                     À qui s’adressent ces formations
                   </p>
                 </div>
                 <h3 className="mt-5 font-display text-[1.7rem] sm:text-[2.1rem] leading-tight font-semibold text-white text-balance">
                   Un parcours réservé aux professionnelles qui accompagnent déjà les enfants
                 </h3>
-                <p className="mt-4 text-[15px] leading-relaxed text-white/70 max-w-2xl">
+                <p className="mt-4 text-[15px] leading-relaxed text-white/70 max-w-2xl hidden">
                   Ces cursus s’adressent aux personnes qui travaillent déjà auprès des enfants dans un cadre professionnel.
                   Vous exercez un autre métier auprès de l’enfant&nbsp;? Contactez-nous pour vérifier votre éligibilité.
                 </p>
