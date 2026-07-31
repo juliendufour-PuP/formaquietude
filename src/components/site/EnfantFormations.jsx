@@ -112,6 +112,9 @@ export default function EnfantFormations({ onSelect }) {
                 transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                 className={`relative flex flex-col rounded-[22px] p-8 border ${f.featured ? 'bg-[#2a1f61] border-[#2a1f61] text-white shadow-[0_40px_80px_-40px_rgba(42,31,97,0.7)]' : 'bg-white border-[#2a1f61]/10'}`}
               >
+                <span className="absolute -top-3 right-6 rounded-full bg-[#ff6b00] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-white shadow-[0_8px_24px_-8px_rgba(255,107,0,0.8)]">
+                  CPF
+                </span>
                 <div className="flex items-start gap-5">
                   <div className="relative shrink-0 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-b from-[#ff8c1a] to-[#ff5e5e] shadow-[0_10px_24px_-8px_rgba(255,94,94,0.55)] ring-1 ring-white/30">
                     <f.icon className="w-7 h-7 text-white drop-shadow-sm" strokeWidth={2.2} />
