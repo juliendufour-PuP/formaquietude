@@ -32,6 +32,10 @@ export default function ContactSection({ formations }) {
               </li>
             )}
           </ul>
+
+          <div className="mt-10 pt-8 border-t border-white/10">
+            <ContactBranding />
+          </div>
         </motion.div>
 
         <motion.div
@@ -43,10 +47,6 @@ export default function ContactSection({ formations }) {
           <p className="text-[14.5px] text-[#2a1f61]/60 mb-7">Remplissez ce formulaire, nous faisons le reste.</p>
           <LeadForm source="rappel" formations={formations} />
         </motion.div>
-      </div>
-
-      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 mt-14 flex justify-end">
-        <ContactBranding />
       </div>
     </section>);
 
