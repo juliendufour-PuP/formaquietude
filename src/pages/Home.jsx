@@ -8,7 +8,7 @@ import TrustStrip from '@/components/site/TrustStrip';
 import Curriculum from '@/components/site/Curriculum';
 import Method from '@/components/site/Method';
 import BookingCalendar from '@/components/site/BookingCalendar';
-import Funding from '@/components/site/Funding';
+import Pricing from '@/components/site/Pricing';
 import ProofTicker from '@/components/site/ProofTicker';
 import Faq from '@/components/site/Faq';
 import ContactSection from '@/components/site/ContactSection';
@@ -53,7 +53,7 @@ export default function Home() {
         sessions={sessions}
         onReserve={(s) => setDialog({ title: s.formation_title, sessionId: s.id, kind: 'reservation' })}
       />
-      <Funding />
+      <Pricing onSelect={(title) => setDialog({ title, sessionId: '', kind: 'rappel' })} />
       <ProofTicker testimonials={testimonials} />
       <Faq />
       <ContactSection formations={titles} />
