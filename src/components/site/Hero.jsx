@@ -40,13 +40,19 @@ export default function Hero() {
             </button>
           </div>
 
-          <div className="mt-12 flex flex-wrap gap-8 border-t border-[#2a1f61]/10 pt-8">
-            {[['15 ans', 'd’expérience terrain'], ['2 400+', 'praticiennes formées'], ['8', 'élèves maximum']].map(([n, l]) => (
-              <div key={n}>
-                <p className="font-display text-3xl font-semibold text-[#2a1f61]">{n}</p>
-                <p className="text-[13px] text-[#2a1f61]/55 mt-1">{l}</p>
-              </div>
-            ))}
+          <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-5 border-t border-[#2a1f61]/10 pt-8">
+            <div className="flex items-center gap-1">
+              {[0, 1, 2, 3, 4].map((i) => <Star key={i} className="w-4 h-4 fill-[#ff6b00] text-[#ff6b00]" />)}
+              <span className="ml-2 text-[13px] font-semibold text-[#2a1f61]">4,9 / 5 — 312 avis Google</span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <BadgeCheck className="w-5 h-5 text-[#ff6b00] shrink-0" />
+              <span className="text-[13px] font-semibold text-[#2a1f61]">Formations éligibles au CPF</span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <Award className="w-5 h-5 text-[#ff6b00] shrink-0" />
+              <span className="text-[13px] font-semibold text-[#2a1f61]">Nominé — Prix Psychologie 2025</span>
+            </div>
           </div>
         </motion.div>
 
@@ -69,19 +75,13 @@ export default function Hero() {
             transition={{ duration: 0.9, delay: 0.5 }}
             className="absolute -bottom-8 left-4 right-4 sm:left-auto sm:-left-10 sm:right-auto sm:w-[330px] rounded-[22px] border border-white/60 bg-white/80 backdrop-blur-xl p-6 shadow-[0_30px_60px_-30px_rgba(42,31,97,0.45)]"
           >
-            <div className="flex items-center gap-1 mb-4">
-              {[0, 1, 2, 3, 4].map((i) => <Star key={i} className="w-3.5 h-3.5 fill-[#ff6b00] text-[#ff6b00]" />)}
-              <span className="ml-2 text-[12px] font-semibold text-[#2a1f61]">4,9 / 5 — 312 avis</span>
-            </div>
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <BadgeCheck className="w-5 h-5 text-[#ff6b00] shrink-0 mt-0.5" />
-                <p className="text-[13.5px] font-semibold text-[#2a1f61] leading-snug">Formations éligibles au CPF</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <Award className="w-5 h-5 text-[#ff6b00] shrink-0 mt-0.5" />
-                <p className="text-[13.5px] font-semibold text-[#2a1f61] leading-snug">Nominé — Prix Psychologie 2025</p>
-              </div>
+            <div className="grid grid-cols-3 gap-3">
+              {[['15 ans', 'd’expérience terrain'], ['2 400+', 'praticiennes formées'], ['8', 'élèves maximum']].map(([n, l]) => (
+                <div key={n}>
+                  <p className="font-display text-2xl sm:text-3xl font-semibold text-[#2a1f61] leading-none">{n}</p>
+                  <p className="text-[11.5px] text-[#2a1f61]/55 mt-2 leading-snug">{l}</p>
+                </div>
+              ))}
             </div>
           </motion.div>
         </motion.div>
