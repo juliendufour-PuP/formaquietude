@@ -116,7 +116,7 @@ export default function Pricing({ onSelect }) {
               </ul>
 
               {p.featured &&
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-8 flex items-center justify-center gap-4">
                   <img
                 src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/264d6736b_image.png"
                 alt="Éligible Mon Compte Formation"
