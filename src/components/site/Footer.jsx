@@ -36,7 +36,7 @@ export default function Footer() {
         <div>
           <p className="text-[11px] tracking-[0.24em] uppercase font-semibold text-[#ff6b00] mb-5">Contact</p>
           <ul className="space-y-3 text-[15px] text-[#2a1f61]/70">
-            <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-1 shrink-0" /> 12 rue de la Quiétude, 69002 Lyon</li>
+            <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-1 shrink-0" /> 9 - 11 Av. Paul Verlaine, 38100 Grenoble</li>
             <li><a href="tel:+33478000000" className="hover:text-[#ff6b00]">04 78 00 00 00</a></li>
             <li><a href="mailto:contact@formaquietude.fr" className="hover:text-[#ff6b00]">contact@formaquietude.fr</a></li>
           </ul>

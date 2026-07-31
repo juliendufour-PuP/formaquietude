@@ -24,7 +24,7 @@ export default function BookingCalendar({ sessions, onReserve }) {
             light
             eyebrow="Calendrier 2026 — 2027"
             title="Réservez votre session"
-            subtitle="Sessions en présentiel à Lyon, Paris et Bordeaux. Les places partent en moyenne 6 semaines avant l’ouverture."
+            subtitle="Sessions en présentiel à Grenoble. Les places partent en moyenne 6 semaines avant l’ouverture."
           />
           <div className="flex gap-3">
             <button onClick={() => scrollBy(-1)} aria-label="Dates précédentes" className="p-3 rounded-full border border-white/25 text-white hover:bg-white/10 transition">

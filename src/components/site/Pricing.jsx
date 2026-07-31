@@ -14,7 +14,7 @@ const common = [
   'Certification « Praticien en massage bien-être »',
 ];
 
-const payment = ['Paiement possible en 3, 4 ou 10 fois', '10 % d’avantage sur vos prochaines formations'];
+const payment = ['10 % d’avantage sur vos prochaines formations'];
 
 const extras = [
   'Formation certifiante à la création d’entreprise',
@@ -73,9 +73,12 @@ export default function Pricing({ onSelect }) {
               </h3>
               <p className={`mt-4 text-[15.5px] leading-relaxed ${p.featured ? 'text-white/70' : 'text-[#2a1f61]/65'}`}>{p.desc}</p>
 
-              <div className="mt-7 flex items-end gap-2">
-                <span className={`font-display text-5xl font-semibold ${p.featured ? 'text-white' : 'text-[#2a1f61]'}`}>{p.price}</span>
-                <span className={`mb-2 text-[13px] ${p.featured ? 'text-white/60' : 'text-[#2a1f61]/50'}`}>TTC</span>
+              <div className="mt-7 flex flex-col gap-1">
+                <div className="flex items-end gap-2">
+                  <span className={`font-display text-5xl font-semibold ${p.featured ? 'text-white' : 'text-[#2a1f61]'}`}>{p.price}</span>
+                  <span className={`mb-2 text-[13px] ${p.featured ? 'text-white/60' : 'text-[#2a1f61]/50'}`}>TTC</span>
+                </div>
+                <p className={`text-[13px] font-medium ${p.featured ? 'text-white/70' : 'text-[#ff6b00]'}`}>Paiement possible en 3, 4 ou 10 fois</p>
               </div>
 
               {p.featured && (
