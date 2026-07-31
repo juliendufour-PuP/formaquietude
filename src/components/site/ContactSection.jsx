@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PhoneCall, Clock, Mail } from 'lucide-react';
+import { PhoneCall, Clock, Mail, MapPin } from 'lucide-react';
 import LeadForm from './LeadForm';
 import ContactBranding from './ContactBranding';
 
@@ -22,15 +22,22 @@ export default function ContactSection({ formations }) {
 
           
           <ul className="mt-10 space-y-4">
-            {[
-            [Clock, 'Rappel sous 24 h ouvrées'],
-            [PhoneCall, '04 78 00 00 00 — du lundi au vendredi, 9 h – 18 h'],
-            [Mail, 'contact@formaquietude.fr']].
-            map(([Icon, txt]) =>
-            <li key={txt} className="flex items-center gap-4 text-white/80 text-[15px]">
-                <Icon className="w-5 h-5 text-[#ff6b00] shrink-0" /> {txt}
-              </li>
-            )}
+            <li className="flex items-center gap-4 text-white/80 text-[15px]">
+              <Clock className="w-5 h-5 text-[#ff6b00] shrink-0" />
+              Du lundi au vendredi · 09:00–12:30 &amp; 13:30–17:00
+            </li>
+            <li className="flex items-center gap-4 text-white/80 text-[15px]">
+              <PhoneCall className="w-5 h-5 text-[#ff6b00] shrink-0" />
+              <a href="tel:+33476228043" className="hover:text-[#ff6b00] transition-colors">04 76 22 80 43</a>
+            </li>
+            <li className="flex items-center gap-4 text-white/80 text-[15px]">
+              <Mail className="w-5 h-5 text-[#ff6b00] shrink-0" />
+              <a href="mailto:secretariat@formaquietude.fr" className="hover:text-[#ff6b00] transition-colors">secretariat@formaquietude.fr</a>
+            </li>
+            <li className="flex items-center gap-4 text-white/80 text-[15px]">
+              <MapPin className="w-5 h-5 text-[#ff6b00] shrink-0" />
+              <a href="https://www.google.com/maps/dir/?api=1&destination=9-11+Av.+Paul+Verlaine,+38100+Grenoble" target="_blank" rel="noreferrer" className="hover:text-[#ff6b00] transition-colors">9 - 11 Av. Paul Verlaine, 38100 Grenoble</a>
+            </li>
           </ul>
 
           <div className="mt-10 pt-8 border-t border-white/10">
