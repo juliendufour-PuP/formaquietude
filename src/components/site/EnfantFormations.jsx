@@ -48,7 +48,7 @@ const formations = [
   icon: Award,
   title: 'Intégrer la relaxation ludique dans ses pratiques éducatives et de soutien',
   duration: '42 h · classe virtuelle',
-  price: '1 500 € NET',
+  price: "1 500 \u20AC",
   desc: 'Certification professionnelle RS 7530 enregistrée par France Compétences, éligible au CPF. Concevoir et animer des séances adaptées à chaque enfant, y compris en situation de handicap.',
   badge: "Certification RS 7530",
   featured: true
