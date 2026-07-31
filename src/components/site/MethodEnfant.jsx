@@ -50,7 +50,7 @@ export default function MethodEnfant() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-[26px] bg-white/[0.04] border border-white/10 p-8 sm:p-10 backdrop-blur-md">
+            className="rounded-[26px] bg-[#3b3a8c]/35 border border-white/15 p-8 sm:p-10 backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)]">
 
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
               <div className="flex-1">
