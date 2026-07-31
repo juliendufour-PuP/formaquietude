@@ -37,7 +37,7 @@ const MASSAGES = [
 
 export default function MassageCarousel({ onSelect }) {
   return (
-    <section id="massages" className="relative bg-[#f6f6fb] py-20 lg:py-28 overflow-hidden">
+    <section id="massages" className="relative bg-[#f6f6fb] py-12 lg:py-14 overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -48,17 +48,13 @@ export default function MassageCarousel({ onSelect }) {
           <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff6b00] mb-5">
             Les massages à la carte
           </p>
-          <h2 className="font-display text-[2.4rem] sm:text-5xl font-semibold text-[#2a1f61] leading-[1.05] max-w-3xl mx-auto text-balance">
-            28 techniques de massage bien-être enseignées
+          <h2 className="font-display text-[1.9rem] sm:text-[2.6rem] font-semibold text-[#2a1f61] leading-[1.1] max-w-3xl mx-auto text-balance">
+            Les différents types de massages bien-être enseignés dans notre centre
           </h2>
-          <p className="mt-5 text-[16.5px] text-[#2a1f61]/65 max-w-2xl mx-auto leading-relaxed">
-            Faites tourner le carrousel pour découvrir chaque protocole — cliquez sur une technique
-            pour être recontactée.
-          </p>
         </motion.div>
       </div>
 
-      <div className="mt-10">
+      <div className="mt-6">
         <ThreeDPhotoCarousel
           cards={MASSAGES}
           onSelect={(c) => onSelect && onSelect(c.title)}

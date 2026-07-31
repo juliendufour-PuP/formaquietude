@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 
-const CARD_W = 220;
-const GAP = 50;
+const CARD_W = 150;
+const GAP = 34;
 const SPEED = 0.025; // deg/frame ≈ 1,5°/s
 
 export function ThreeDPhotoCarousel({ cards = [], onSelect }) {
@@ -61,8 +61,8 @@ export function ThreeDPhotoCarousel({ cards = [], onSelect }) {
   return (
     <div
       ref={stageRef}
-      className="relative h-[400px] w-full cursor-grab overflow-hidden active:cursor-grabbing"
-      style={{ perspective: '1500px', touchAction: 'pan-y' }}
+      className="relative h-[230px] w-full cursor-grab overflow-hidden active:cursor-grabbing"
+      style={{ perspective: '1100px', touchAction: 'pan-y' }}
     >
       <div
         ref={ringRef}
@@ -76,29 +76,29 @@ export function ThreeDPhotoCarousel({ cards = [], onSelect }) {
             className="absolute left-1/2 top-1/2"
             style={{
               width: CARD_W,
-              height: 300,
+              height: 175,
               marginLeft: -CARD_W / 2,
-              marginTop: -150,
+              marginTop: -87,
               backfaceVisibility: 'hidden',
               transform: `rotateY(${i * step}deg) translateZ(${radius}px)`,
             }}
           >
-            <div className="h-full w-full overflow-hidden rounded-2xl bg-[#2a1f61] shadow-[0_16px_40px_rgba(42,31,97,0.22)]">
+            <div className="flex h-full w-full flex-col overflow-hidden rounded-xl bg-[#2a1f61] shadow-[0_14px_32px_rgba(42,31,97,0.22)]">
               <img
                 src={card.image}
                 alt={card.title}
                 draggable={false}
-                className="block h-[200px] w-full object-cover"
+                className="block h-[130px] w-full object-cover"
               />
-              <div className="px-3.5 py-3 text-[13.5px] font-semibold leading-snug text-white">
+              <div className="flex flex-1 items-center justify-center px-2 text-center text-[10.5px] font-semibold leading-tight text-white">
                 {card.title}
               </div>
             </div>
           </div>
         ))}
       </div>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-[180px] bg-gradient-to-r from-[#f6f6fb] to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-[180px] bg-gradient-to-l from-[#f6f6fb] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-[120px] bg-gradient-to-r from-[#f6f6fb] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-[120px] bg-gradient-to-l from-[#f6f6fb] to-transparent" />
     </div>
   );
 }
