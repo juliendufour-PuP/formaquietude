@@ -9,9 +9,12 @@ const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smoo
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-white pt-32 pb-16 lg:pt-40 lg:pb-24">
-      <span className="pointer-events-none select-none absolute -left-10 top-24 font-display text-[16vw] leading-none text-[#2a1f61]/[0.04] hidden lg:block">
-        Maîtrise
-      </span>
+      <img
+        src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/659c19b0e_logo-formaquietude.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute -left-32 top-10 w-[46vw] max-w-[720px] opacity-[0.06] hidden lg:block"
+      />
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 grid lg:grid-cols-[1fr_0.95fr] gap-14 items-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
