@@ -7,6 +7,7 @@ import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 import Home from '@/pages/Home';
+import RelaxationEnfant from '@/pages/RelaxationEnfant';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -35,6 +36,7 @@ const AuthenticatedApp = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/relaxation-enfant" element={<RelaxationEnfant />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
