@@ -116,17 +116,17 @@ export default function Pricing({ onSelect }) {
               </ul>
 
               {p.featured &&
-                <div className="mt-8 flex items-center gap-4">
+            <div className="mt-8 flex items-center gap-4">
                   <img
-                    src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/264d6736b_image.png"
-                    alt="Éligible Mon Compte Formation"
-                    className="h-[62px] w-auto rounded-lg bg-white p-1" />
+                src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/264d6736b_image.png"
+                alt="Éligible Mon Compte Formation"
+                className="h-[62px] w-auto rounded-lg bg-white p-1" />
                   <img
-                    src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/22ccf1530_image.png"
-                    alt="Qualiopi — processus certifié"
-                    className="h-[50px] w-auto rounded-lg bg-white p-1" />
+                src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/22ccf1530_image.png"
+                alt="Qualiopi — processus certifié"
+                className="h-[50px] w-auto rounded-lg bg-white px-5 py-1" />
                 </div>
-              }
+            }
             </motion.div>
           )}
         </div>
