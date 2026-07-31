@@ -8,6 +8,7 @@ import {
   Award,
   Check,
   ArrowRight,
+  Sparkle,
 } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
@@ -112,8 +113,10 @@ export default function EnfantFormations({ onSelect }) {
                 className={`relative flex flex-col rounded-[22px] p-8 border ${f.featured ? 'bg-[#2a1f61] border-[#2a1f61] text-white shadow-[0_40px_80px_-40px_rgba(42,31,97,0.7)]' : 'bg-white border-[#2a1f61]/10'}`}
               >
                 <div className="flex items-start gap-5">
-                  <div className={`shrink-0 rounded-2xl p-3 ${f.featured ? 'bg-[#ff6b00] text-white' : 'bg-[#ff6b00]/10 text-[#ff6b00]'}`}>
-                    <f.icon className="w-7 h-7" />
+                  <div className="relative shrink-0 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-b from-[#ff8c1a] to-[#ff5e5e] shadow-[0_10px_24px_-8px_rgba(255,94,94,0.55)] ring-1 ring-white/30">
+                    <f.icon className="w-7 h-7 text-white drop-shadow-sm" strokeWidth={2.2} />
+                    <Sparkle className="absolute -top-1 right-0 w-3 h-3 text-white fill-white" />
+                    <Sparkle className="absolute -bottom-1 left-0 w-2.5 h-2.5 text-white fill-white" />
                   </div>
                   <div className="flex-1">
                     <h3 className={`font-display text-[1.4rem] leading-snug font-semibold ${f.featured ? 'text-white' : 'text-[#2a1f61]'}`}>
