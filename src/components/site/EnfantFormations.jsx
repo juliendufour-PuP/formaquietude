@@ -110,7 +110,7 @@ export default function EnfantFormations({ onSelect }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className={`relative flex flex-col rounded-[22px] p-8 border ${f.featured ? 'bg-[#2a1f61] border-[#2a1f61] text-white shadow-[0_40px_80px_-40px_rgba(42,31,97,0.7)]' : 'bg-white border-[#2a1f61]/10'}`}>
+              className={`relative flex flex-col rounded-[22px] p-8 border ${f.featured ? 'bg-[#2a1f61] border-[#2a1f61] text-white shadow-[0_40px_80px_-40px_rgba(42,31,97,0.7)] lg:col-span-2 lg:max-w-[calc(50%-0.75rem)] lg:mx-auto' : 'bg-white border-[#2a1f61]/10'}`}>
               
                 <span className="absolute -top-3 right-6 rounded-full bg-[#ff6b00] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-white shadow-[0_8px_24px_-8px_rgba(255,107,0,0.8)]">éligible CPF
 
