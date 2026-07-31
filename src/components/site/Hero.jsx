@@ -25,8 +25,8 @@ export default function Hero() {
           <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff6b00] mb-6">
             Centre de formation aux métiers du bien-être
           </p>
-          <h1 className="font-display text-[2.7rem] sm:text-[4rem] leading-[1] font-semibold text-[#2a1f61] text-balance">Formation cmassage bien-être
-certifiante
+          <h1 className="font-display text-[2.7rem] sm:text-[4rem] leading-[1] font-semibold text-[#2a1f61] text-balance">Formation certifiante en massage bien-être
+
 
           </h1>
           <p className="mt-7 text-[17px] leading-relaxed text-[#2a1f61]/70 max-w-xl">
