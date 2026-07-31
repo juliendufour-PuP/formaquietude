@@ -18,8 +18,8 @@ export default function LeadForm({ source = 'rappel', defaultFormation = '', ses
 
   const submit = async (e) => {
     e.preventDefault();
-    if (!form.first_name.trim() || !form.last_name.trim() || (!form.phone.trim() && !form.email.trim())) {
-      setError('Merci d’indiquer votre prénom, votre nom et un moyen de vous joindre.');
+    if (!form.first_name.trim() || !form.last_name.trim() || !form.phone.trim() || !form.email.trim()) {
+      setError('Merci d’indiquer votre prénom, votre nom, votre téléphone et votre e-mail.');
       return;
     }
     setError('');
