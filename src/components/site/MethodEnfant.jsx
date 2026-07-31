@@ -14,22 +14,22 @@ import { Image } from '@/components/ui/image';
 import SectionHeading from './SectionHeading';
 
 const steps = [
-  { n: '01', t: 'Entretien pédagogique', d: 'Un échange de 20 minutes pour valider votre expérience auprès des enfants et définir le cursus adapté à votre métier.' },
-  { n: '02', t: 'Montage du financement', d: 'Nous constituons ensemble votre dossier CPF ou entreprise. Aucune avance de frais dans la majorité des cas.' },
-  { n: '03', t: 'Immersion en petit groupe', d: '10 élèves maximum, pratique encadrée d’attitudes et de gestes de relaxation adaptés à l’enfant, en présentiel à Grenoble.' },
-  { n: '04', t: 'Mise en pratique & suivi', d: 'Concevoir et animer des séances adaptées à chaque enfant, y compris en situation de handicap — suivi post-formation inclus.' },
-];
+{ n: '01', t: 'Entretien pédagogique', d: 'Un échange de 20 minutes pour valider votre expérience auprès des enfants et définir le cursus adapté à votre métier.' },
+{ n: '02', t: 'Montage du financement', d: 'Nous constituons ensemble votre dossier CPF ou entreprise. Aucune avance de frais dans la majorité des cas.' },
+{ n: '03', t: 'Immersion en petit groupe', d: '10 élèves maximum, pratique encadrée d’attitudes et de gestes de relaxation adaptés à l’enfant, en présentiel à Grenoble.' },
+{ n: '04', t: 'Mise en pratique & suivi', d: 'Concevoir et animer des séances adaptées à chaque enfant, y compris en situation de handicap — suivi post-formation inclus.' }];
+
 
 const audience = [
-  { icon: BookOpen, label: 'Instituteur / institutrice' },
-  { icon: GraduationCap, label: 'Professeur des écoles' },
-  { icon: Wind, label: 'Sophrogogue' },
-  { icon: Brain, label: 'Psychothérapeute pour enfant' },
-  { icon: Baby, label: 'Auxiliaire de puériculture' },
-  { icon: HeartHandshake, label: 'Éducateur spécialisé' },
-  { icon: Sun, label: 'Animateur petite enfance' },
-  { icon: Backpack, label: 'ATSEM' },
-];
+{ icon: BookOpen, label: 'Instituteur / institutrice' },
+{ icon: GraduationCap, label: 'Professeur des écoles' },
+{ icon: Wind, label: 'Sophrogogue' },
+{ icon: Brain, label: 'Psychothérapeute pour enfant' },
+{ icon: Baby, label: 'Auxiliaire de puériculture' },
+{ icon: HeartHandshake, label: 'Éducateur spécialisé' },
+{ icon: Sun, label: 'Animateur petite enfance' },
+{ icon: Backpack, label: 'ATSEM' }];
+
 
 export default function MethodEnfant() {
   return (
@@ -54,7 +54,7 @@ export default function MethodEnfant() {
 
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
               <div className="flex-1">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 hidden">
                   <span className="flex items-center justify-center w-11 h-11 rounded-full bg-[#ff6b00]/20 text-[#ff8c1a]">
                     <HeartHandshake className="w-5 h-5" />
                   </span>
@@ -71,14 +71,14 @@ export default function MethodEnfant() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-2 lg:max-w-[42%] lg:justify-end">
-                {audience.map((p) => (
-                  <span
-                    key={p.label}
-                    className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3.5 py-1.5 text-[13px] font-medium text-white/85">
+                {audience.map((p) =>
+                <span
+                  key={p.label}
+                  className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3.5 py-1.5 text-[13px] font-medium text-white/85">
                     <p.icon className="w-4 h-4 text-[#ff8c1a]" />
                     {p.label}
                   </span>
-                ))}
+                )}
               </div>
             </div>
           </motion.div>
@@ -108,24 +108,24 @@ export default function MethodEnfant() {
             </div>
 
             <ol className="space-y-9">
-              {steps.map((s, i) => (
-                <motion.li
-                  key={s.n}
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: '-60px' }}
-                  transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                  className="relative pl-16">
+              {steps.map((s, i) =>
+              <motion.li
+                key={s.n}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className="relative pl-16">
                   <span className="absolute left-0 top-0 font-display text-3xl font-semibold text-[#ff6b00]">{s.n}</span>
                   <span className="absolute left-[22px] top-11 bottom-[-24px] w-px bg-gradient-to-b from-[#ff6b00]/40 to-transparent last:hidden" />
                   <h3 className="font-display text-2xl font-semibold text-[#2a1f61]">{s.t}</h3>
                   <p className="mt-2 text-[16px] leading-relaxed text-[#2a1f61]/65">{s.d}</p>
                 </motion.li>
-              ))}
+              )}
             </ol>
           </div>
         </div>
       </section>
-    </>
-  );
+    </>);
+
 }
