@@ -35,7 +35,11 @@ export default function Home() {
     })();
   }, []);
 
-  const titles = formations.map((f) => f.title);
+  const titles = [
+    ...formations.map((f) => f.title),
+    'Devenir Praticien en massage bien-être',
+    'Devenir Praticien et lancer son activité',
+  ];
 
   return (
     <div className="bg-white">

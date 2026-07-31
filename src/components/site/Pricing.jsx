@@ -63,7 +63,7 @@ export default function Pricing({ onSelect }) {
             transition={{ duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
             className={`relative rounded-[26px] p-8 sm:p-10 border ${p.featured ? 'bg-[#2a1f61] border-[#2a1f61] text-white shadow-[0_40px_80px_-40px_rgba(42,31,97,0.7)]' : 'bg-white border-[#2a1f61]/10'}`}>
 
-              <span className={`absolute top-5 right-5 rounded-full px-3 py-1.5 text-[11px] font-semibold tracking-[0.06em] ${p.featured ? 'bg-white/15 text-white' : 'bg-[#2a1f61]/8 text-[#2a1f61]'}`}>
+              <span className="absolute -top-3 left-8 rounded-full bg-[#ff6b00] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white shadow-[0_8px_24px_-8px_rgba(255,107,0,0.8)]">
                 En présentiel à Grenoble
               </span>
 
