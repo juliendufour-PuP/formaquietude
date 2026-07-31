@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { PhoneCall, Clock, Mail } from 'lucide-react';
 import LeadForm from './LeadForm';
+import ContactBranding from './ContactBranding';
 
 export default function ContactSection({ formations }) {
   return (
@@ -42,6 +43,10 @@ export default function ContactSection({ formations }) {
           <p className="text-[14.5px] text-[#2a1f61]/60 mb-7">Remplissez ce formulaire, nous faisons le reste.</p>
           <LeadForm source="rappel" formations={formations} />
         </motion.div>
+      </div>
+
+      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 mt-14 flex justify-end">
+        <ContactBranding />
       </div>
     </section>);
 
