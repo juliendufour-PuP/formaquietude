@@ -1,30 +1,7 @@
 import React, { useId } from 'react';
 
-// One bright stroke (the head) with a contiguous, tapering trail behind it that
-// fades to nothing — a single comet in a single colour.
-const PATTERN = 1880;
-const HEAD_LEN = 42;
-
-function buildTrail() {
-  const trail = [{ from: 0, len: HEAD_LEN, opacity: 1, widthScale: 1 }];
-  let cum = 0;
-  let len = 30;
-  let i = 1;
-  while (len > 2.5 && i < 40) {
-    cum += len;
-    trail.push({
-      from: cum,
-      len,
-      opacity: Math.pow(0.82, i),
-      widthScale: Math.max(0.5, 1 - i * 0.022),
-    });
-    len *= 0.86;
-    i++;
-  }
-  return trail;
-}
-const TRAIL = buildTrail();
-
+// A SINGLE continuous stroke whose opacity is driven by an animated gradient mask:
+// a bright head sweeps across, leaving a smooth fading trail of the same colour.
 export function GradientTracing({
   width,
   height,
@@ -38,8 +15,29 @@ export function GradientTracing({
   reverse = false,
 }) {
   const rawId = useId().replace(/[:]/g, '');
+  const maskId = `cm-${rawId}`;
+  const gradId = `cmg-${rawId}`;
   const animName = `gt-${rawId}`;
   const color = gradientColors[1] ?? gradientColors[0];
+
+  const cometLen = Math.round(width * 0.22);
+  const headAtRight = !reverse;
+  const start = reverse ? width : -cometLen;
+  const end = reverse ? -cometLen : width;
+
+  const stops = headAtRight
+    ? [
+        { o: 0, op: 0 },
+        { o: 0.5, op: 0.16 },
+        { o: 0.8, op: 0.5 },
+        { o: 1, op: 1 },
+      ]
+    : [
+        { o: 0, op: 1 },
+        { o: 0.2, op: 0.5 },
+        { o: 0.5, op: 0.16 },
+        { o: 1, op: 0 },
+      ];
 
   return (
     <div className={`relative ${className}`} style={{ width: fluid ? '100%' : width, height }}>
@@ -50,25 +48,34 @@ export function GradientTracing({
         preserveAspectRatio={fluid ? 'none' : undefined}
         fill="none"
       >
-        <path d={path} stroke={baseColor} strokeOpacity="0.12" strokeWidth={strokeWidth} />
-        {TRAIL.map((s, i) => (
-          <path
-            key={i}
-            d={path}
-            stroke={color}
-            strokeOpacity={s.opacity}
-            strokeLinecap="round"
-            strokeWidth={strokeWidth * s.widthScale}
-            strokeDasharray={`${s.len} ${PATTERN - s.len}`}
-            style={{
-              ['--gt-from']: `${s.from}px`,
-              animation: `${animName} ${animationDuration}s linear infinite`,
-              animationDirection: reverse ? 'reverse' : 'normal',
-            }}
-          />
-        ))}
+        <defs>
+          <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="0">
+            {stops.map((s) => (
+              <stop key={s.o} offset={s.o} stopColor="white" stopOpacity={s.op} />
+            ))}
+          </linearGradient>
+          <mask id={maskId} maskUnits="userSpaceOnUse" x={0} y={0} width={width} height={height}>
+            <rect
+              x={0}
+              y={0}
+              width={cometLen}
+              height={height}
+              fill={`url(#${gradId})`}
+              style={{ animation: `${animName} ${animationDuration}s linear infinite` }}
+            />
+          </mask>
+        </defs>
+
+        <path d={path} stroke={baseColor} strokeOpacity="0.1" strokeWidth={strokeWidth} />
+        <path
+          d={path}
+          stroke={color}
+          strokeWidth={strokeWidth}
+          strokeLinecap="round"
+          mask={`url(#${maskId})`}
+        />
       </svg>
-      <style>{`@keyframes ${animName}{from{stroke-dashoffset:var(--gt-from)}to{stroke-dashoffset:calc(var(--gt-from) - ${PATTERN}px)}}`}</style>
+      <style>{`@keyframes ${animName}{from{transform:translateX(${start}px)}to{transform:translateX(${end}px)}}`}</style>
     </div>
   );
 }
