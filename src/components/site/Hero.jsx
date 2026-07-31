@@ -21,13 +21,14 @@ export default function Hero() {
           <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff6b00] mb-6">
             Centre de formation aux métiers du bien-être
           </p>
-          <h1 className="font-display text-[3rem] sm:text-[4.5rem] leading-[0.95] font-semibold text-[#2a1f61] text-balance">
-            L’Art du Toucher,<br />
-            <span className="italic text-[#ff6b00]">la Rigueur</span> du Métier.
+          <h1 className="font-display text-[2.7rem] sm:text-[4rem] leading-[1] font-semibold text-[#2a1f61] text-balance">
+            Formation massage bien-être<br />
+            <span className="italic text-[#ff6b00]">certifiante</span> et éligible CPF
           </h1>
           <p className="mt-7 text-[17px] leading-relaxed text-[#2a1f61]/70 max-w-xl">
-            Devenez praticienne en massage bien-être en quelques jours de pratique intensive. Formations professionnelles
-            certifiantes, groupes de 8 personnes maximum, 80 % de temps sur table.
+            École de massage bien-être : devenez praticienne en massage professionnel en quelques jours de pratique
+            intensive. Idéal reconversion ou perfectionnement esthéticienne — groupes de 8 personnes maximum,
+            80 % de temps sur table.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">

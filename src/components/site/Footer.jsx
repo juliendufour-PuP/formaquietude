@@ -6,7 +6,11 @@ export default function Footer() {
     <footer className="bg-white border-t border-[#2a1f61]/10 pt-16 pb-28 md:pb-16">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 grid md:grid-cols-4 gap-10">
         <div className="md:col-span-2">
-          <p className="font-display text-3xl font-semibold text-[#2a1f61]">Formaquiétude</p>
+          <img
+            src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/659c19b0e_logo-formaquietude.png"
+            alt="FormaQuiétude — formations bien-être"
+            className="h-12 w-auto"
+          />
           <p className="mt-4 text-[15px] leading-relaxed text-[#2a1f61]/65 max-w-sm">
             Centre de formation aux métiers du bien-être depuis 2009. Organisme certifié Qualiopi,
             formations éligibles au CPF.
