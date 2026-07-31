@@ -6,6 +6,7 @@ export default function BookingBackdrop({
   gradientColors = ['#ff6b00', '#ff6b00', '#ffffff'],
   opacityClass = 'opacity-70',
   top = '38%',
+  reverse = false,
 }) {
   return (
     <div
@@ -25,6 +26,7 @@ export default function BookingBackdrop({
           animationDuration={4.4}
           strokeWidth={5}
           fluid
+          reverse={reverse}
           className="w-full"
         />
       </div>

@@ -10,8 +10,13 @@ export function GradientTracing({
   path = `M0,${height / 2} L${width},${height / 2}`,
   className = '',
   fluid = false,
+  reverse = false,
 }) {
   const gradientId = `pulse-${useId().replace(/[:]/g, '')}`;
+  const x1From = reverse ? width : -width * 0.5;
+  const x1To = reverse ? -width * 0.5 : width;
+  const x2From = reverse ? width * 1.5 : 0;
+  const x2To = reverse ? 0 : width * 1.5;
 
   return (
     <div className={`relative ${className}`} style={{ width: fluid ? '100%' : width, height }}>
@@ -31,15 +36,15 @@ export function GradientTracing({
             <stop offset="1" stopColor={gradientColors[2]} stopOpacity="0" />
             <animate
               attributeName="x1"
-              from={`-${width * 0.5}`}
-              to={width}
+              from={x1From}
+              to={x1To}
               dur={`${animationDuration}s`}
               repeatCount="indefinite"
             />
             <animate
               attributeName="x2"
-              from={`0`}
-              to={`${width * 1.5}`}
+              from={x2From}
+              to={x2To}
               dur={`${animationDuration}s`}
               repeatCount="indefinite"
             />
