@@ -1,5 +1,4 @@
 import React, { useId } from 'react';
-import { motion } from 'framer-motion';
 
 export function GradientTracing({
   width,
@@ -12,7 +11,7 @@ export function GradientTracing({
   className = '',
   fluid = false,
 }) {
-  const gradientId = `pulse-${useId().replace(/:/g, '')}`;
+  const gradientId = `pulse-${useId().replace(/[:]/g, '')}`;
 
   return (
     <div className={`relative ${className}`} style={{ width: fluid ? '100%' : width, height }}>
@@ -26,16 +25,25 @@ export function GradientTracing({
         <path d={path} stroke={baseColor} strokeOpacity="0.15" strokeWidth={strokeWidth} />
         <path d={path} stroke={`url(#${gradientId})`} strokeLinecap="round" strokeWidth={strokeWidth} />
         <defs>
-          <motion.linearGradient
-            animate={{ x1: [0, width * 2], x2: [0, width] }}
-            transition={{ duration: animationDuration, repeat: Infinity, ease: 'linear' }}
-            id={gradientId}
-            gradientUnits="userSpaceOnUse"
-          >
+          <linearGradient id={gradientId} gradientUnits="userSpaceOnUse">
             <stop stopColor={gradientColors[0]} stopOpacity="0" />
             <stop stopColor={gradientColors[1]} />
             <stop offset="1" stopColor={gradientColors[2]} stopOpacity="0" />
-          </motion.linearGradient>
+            <animate
+              attributeName="x1"
+              from={`-${width * 0.5}`}
+              to={width}
+              dur={`${animationDuration}s`}
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="x2"
+              from={`0`}
+              to={`${width * 1.5}`}
+              dur={`${animationDuration}s`}
+              repeatCount="indefinite"
+            />
+          </linearGradient>
         </defs>
       </svg>
     </div>

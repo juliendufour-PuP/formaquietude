@@ -49,12 +49,12 @@ export default function Home() {
         onSelect={(title) => setDialog({ title, sessionId: '', kind: 'rappel' })}
       />
       <Method />
-      <div className="hidden">
-        <BookingCalendar
-          sessions={sessions}
-          onReserve={(s) => setDialog({ title: s.formation_title, sessionId: s.id, kind: 'reservation' })}
-        />
-      </div>
+      {/* BookingCalendar section — désactivée visuellement, conservée dans le code
+      <BookingCalendar
+        sessions={sessions}
+        onReserve={(s) => setDialog({ title: s.formation_title, sessionId: s.id, kind: 'reservation' })}
+      />
+      */}
       <Pricing onSelect={(title) => setDialog({ title, sessionId: '', kind: 'rappel' })} />
       <ProofTicker testimonials={testimonials} />
       <Faq />
