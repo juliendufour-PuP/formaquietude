@@ -34,7 +34,7 @@ const formations = [
   duration: '35 h · 5 jours · présentiel',
   price: 'à partir de 990 €',
   desc: 'Acquérez les bases fondamentales de la relaxation ludique pour accompagner l’enfant en individuel ou en groupe. Formation récompensée par le Magazine Psychologies en 2024.',
-  badge: 'Récompensée par Psychologies 2024'
+  badge: "R\xE9compens\xE9e par Psychologies 2025"
 },
 {
   icon: Accessibility,
@@ -42,7 +42,7 @@ const formations = [
   duration: '21 h · 3 jours · visio',
   price: 'à partir de 600 €',
   desc: 'Méthode d’accompagnement de détente et de décontraction musculaire adaptée aux besoins et capacités de l’enfant. Récompensée par le Magazine Psychologies en 2024.',
-  badge: 'Récompensée par Psychologies 2024'
+  badge: "R\xE9compens\xE9e par Psychologies 2025"
 },
 {
   icon: Award,
