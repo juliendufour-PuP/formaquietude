@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import Image from '@/components/ui/image';
+import { Image } from '@/components/ui/image';
 import SectionHeading from './SectionHeading';
 import FormationCard from './FormationCard';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Award, BadgeCheck, Star, ArrowDown } from 'lucide-react';
-import Image from '@/components/ui/image';
+import { Image } from '@/components/ui/image';
 import MagneticButton from './MagneticButton';
 
 const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -57,7 +57,7 @@ export default function Hero() {
         >
           <div className="overflow-hidden rounded-[28px] shadow-[0_40px_90px_-40px_rgba(42,31,97,0.55)]">
             <Image
-              src="/__generating__/f3795f88-7e8b-410e-86f6-08fd05b8bd7d.png"
+              src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/5a01768d7_generated_5d77c73f.png"
               alt="Mains d’une praticienne en pleine manœuvre de massage"
               className="w-full h-[420px] sm:h-[560px] lg:h-[640px]"
               fittingType="fill"

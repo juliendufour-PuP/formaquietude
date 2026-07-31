@@ -1,0 +1,83 @@
+import React, { useEffect, useState } from 'react';
+import { base44 } from '@/api/base44Client';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import ScrollProgress from '@/components/site/ScrollProgress';
+import Navbar from '@/components/site/Navbar';
+import Hero from '@/components/site/Hero';
+import TrustStrip from '@/components/site/TrustStrip';
+import Curriculum from '@/components/site/Curriculum';
+import Method from '@/components/site/Method';
+import BookingCalendar from '@/components/site/BookingCalendar';
+import Funding from '@/components/site/Funding';
+import ProofTicker from '@/components/site/ProofTicker';
+import Faq from '@/components/site/Faq';
+import ContactSection from '@/components/site/ContactSection';
+import StickyCallBar from '@/components/site/StickyCallBar';
+import Footer from '@/components/site/Footer';
+import LeadForm from '@/components/site/LeadForm';
+
+export default function Home() {
+  const [formations, setFormations] = useState([]);
+  const [sessions, setSessions] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
+  const [dialog, setDialog] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const [f, s, t] = await Promise.all([
+        base44.entities.Formation.list('order'),
+        base44.entities.Session.list('start_date'),
+        base44.entities.Testimonial.list(),
+      ]);
+      setFormations(f);
+      setSessions(s);
+      setTestimonials(t);
+    })();
+  }, []);
+
+  const titles = formations.map((f) => f.title);
+
+  return (
+    <div className="bg-white">
+      <ScrollProgress />
+      <Navbar />
+      <Hero />
+      <TrustStrip />
+      <Curriculum
+        formations={formations}
+        sessions={sessions}
+        onSelect={(title) => setDialog({ title, sessionId: '', kind: 'rappel' })}
+      />
+      <Method />
+      <BookingCalendar
+        sessions={sessions}
+        onReserve={(s) => setDialog({ title: s.formation_title, sessionId: s.id, kind: 'reservation' })}
+      />
+      <Funding />
+      <ProofTicker testimonials={testimonials} />
+      <Faq />
+      <ContactSection formations={titles} />
+      <Footer />
+      <StickyCallBar />
+
+      <Dialog open={!!dialog} onOpenChange={(o) => !o && setDialog(null)}>
+        <DialogContent className="max-w-lg rounded-[24px] p-7 max-h-[92vh] overflow-y-auto">
+          {dialog && (
+            <>
+              <h3 className="font-display text-3xl font-semibold text-[#2a1f61]">
+                {dialog.kind === 'reservation' ? 'Réserver ma place' : 'Je souhaite être recontactée'}
+              </h3>
+              <p className="text-[14.5px] text-[#2a1f61]/60 mb-6">{dialog.title}</p>
+              <LeadForm
+                source={dialog.kind}
+                defaultFormation={dialog.title}
+                sessionId={dialog.sessionId}
+                formations={titles}
+              />
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, ArrowUpRight, CalendarDays } from 'lucide-react';
-import Image from '@/components/ui/image';
+import { Image } from '@/components/ui/image';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 
@@ -20,7 +20,7 @@ export default function FormationCard({ formation, nextSession, index, onSelect,
         <Image
           src={formation.image_url}
           alt={formation.title}
-          className="w-full h-[260px] transition-transform duration-[900ms] group-hover:scale-[1.06]"
+          className="w-full h-[260px] transition-transform duration-700 group-hover:scale-[1.06]"
           fittingType="fill"
         />
         <span className="absolute top-4 left-4 rounded-full bg-white/90 backdrop-blur px-3 py-1.5 text-[11px] font-semibold tracking-wide text-[#2a1f61]">

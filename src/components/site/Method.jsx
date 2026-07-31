@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Image from '@/components/ui/image';
+import { Image } from '@/components/ui/image';
 import SectionHeading from './SectionHeading';
 
 const steps = [
@@ -24,7 +24,7 @@ export default function Method() {
           <div className="relative">
             <div className="overflow-hidden rounded-[24px]">
               <Image
-                src="/__generating__/fd3b57ba-2c79-4f63-bfe8-73ab54c38d46.png"
+                src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/3cb2c4089_generated_9a7fd42f.png"
                 alt="Mains d’une élève prenant des notes à côté d’une table de massage"
                 className="w-full h-[420px] lg:h-[540px]"
                 fittingType="fill"

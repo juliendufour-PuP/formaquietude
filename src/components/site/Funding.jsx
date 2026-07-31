@@ -1,6 +1,6 @@
 import React from 'react';
 import { Award, BadgeCheck, Landmark, FileCheck2 } from 'lucide-react';
-import Image from '@/components/ui/image';
+import { Image } from '@/components/ui/image';
 import SectionHeading from './SectionHeading';
 
 const cards = [
@@ -31,7 +31,7 @@ export default function Funding() {
 
         <div className="mt-14 overflow-hidden rounded-[24px]">
           <Image
-            src="/__generating__/ef621ba7-6ad5-41ab-8852-731b3efc8827.png"
+            src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/011efdf45_generated_85015a9f.png"
             alt="Studio de formation au massage avec tables et linge blanc"
             className="w-full h-[260px] sm:h-[380px]"
             fittingType="fill"
