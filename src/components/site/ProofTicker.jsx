@@ -1,11 +1,13 @@
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
+import BookingBackdrop from './BookingBackdrop';
 
 export default function ProofTicker({ testimonials }) {
   const loop = [...testimonials, ...testimonials];
   return (
-    <section className="bg-white py-20 lg:py-28 overflow-hidden">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+    <section className="bg-white py-20 lg:py-28 overflow-hidden relative">
+      <BookingBackdrop baseColor="#2a1f61" gradientColors={['#ff6b00', '#ff6b00', '#2a1f61']} opacityClass="opacity-40" top="8%" />
+      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
         <div>
           <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff6b00] mb-4">Elles ont osé la reconversion</p>
           <h2 className="font-display text-[2.2rem] sm:text-5xl font-semibold text-[#2a1f61] leading-[1.05]">
@@ -18,7 +20,7 @@ export default function ProofTicker({ testimonials }) {
         </div>
       </div>
 
-      <div className="marquee-wrap relative w-screen">
+      <div className="marquee-wrap relative w-screen" style={{ zIndex: 1 }}>
         <div className="marquee-track flex gap-6 w-max">
           {loop.map((t, i) => (
             <figure key={`${t.id}-${i}`} className="w-[360px] shrink-0 rounded-[22px] bg-[#f4f4f9] p-7">
