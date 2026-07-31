@@ -105,37 +105,37 @@ export default function EnfantFormations({ onSelect }) {
             </motion.div>
 
             {/* Carte badges CPF / Qualiopi sur fond confetti pastel */}
-            <motion.div
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.7, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
-              className="relative rounded-[26px] bg-[#f5eee9] overflow-hidden p-8 flex flex-col items-center justify-center gap-5 hidden">
-              <img
-                src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/c349b6a1c_generated_image.png"
-                alt=""
-                aria-hidden
-                className="absolute inset-0 w-full h-full object-cover opacity-70 pointer-events-none" />
-              
-              <div className="relative z-10 flex flex-col items-center gap-5 w-full">
-                <span className="flex items-center justify-center w-12 h-12 rounded-full bg-[#a3b18a] text-white shadow-sm">
-                  <CircleCheck className="w-6 h-6" strokeWidth={2.2} />
-                </span>
-                <img
-                  src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/264d6736b_image.png"
-                  alt="Éligible Mon Compte Formation"
-                  className="h-[58px] w-auto rounded-xl bg-white p-1.5 shadow-sm" />
-                
-                <img
-                  src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/22ccf1530_image.png"
-                  alt="Qualiopi — processus certifié"
-                  className="h-[46px] w-auto rounded-xl bg-white px-5 py-1 shadow-sm" />
-                
-                <span className="flex items-center justify-center w-12 h-12 rounded-full bg-[#a3b18a] text-white shadow-sm">
-                  <HeartHandshake className="w-6 h-6" strokeWidth={2.2} />
-                </span>
-              </div>
-            </motion.div>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
           </div>
         </div>
       </section>
