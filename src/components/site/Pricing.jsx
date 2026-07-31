@@ -53,7 +53,7 @@ export default function Pricing({ onSelect }) {
           subtitle="Vous souhaitez vous former au métier ou être accompagnée jusqu’à la création de votre activité ? Choisissez le parcours qui correspond à votre objectif professionnel." />
         
 
-        <div className="mt-16 grid lg:grid-cols-2 gap-7 items-start">
+        <div className="mt-16 grid lg:grid-cols-2 gap-7 items-stretch">
           {plans.map((p, i) =>
           <motion.div
             key={p.title}
