@@ -9,7 +9,7 @@ export default function Footer() {
           <p className="font-display text-3xl font-semibold text-[#2a1f61]">Formaquiétude</p>
           <p className="mt-4 text-[15px] leading-relaxed text-[#2a1f61]/65 max-w-sm">
             Centre de formation aux métiers du bien-être depuis 2009. Organisme certifié Qualiopi,
-            formations éligibles au CPF, nominé au Prix Psychologie 2025.
+            formations éligibles au CPF.
           </p>
           <div className="mt-6 flex gap-3">
             {[[Instagram, 'https://instagram.com'], [Facebook, 'https://facebook.com'], [Linkedin, 'https://linkedin.com']].map(([Icon, href]) => (

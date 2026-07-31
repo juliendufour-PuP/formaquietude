@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, BadgeCheck, Star, ArrowDown } from 'lucide-react';
+import { Star, ArrowDown } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import MagneticButton from './MagneticButton';
 
@@ -45,14 +45,11 @@ export default function Hero() {
               {[0, 1, 2, 3, 4].map((i) => <Star key={i} className="w-4 h-4 fill-[#ff6b00] text-[#ff6b00]" />)}
               <span className="ml-2 text-[13px] font-semibold text-[#2a1f61]">4,9 / 5 — 312 avis Google</span>
             </div>
-            <div className="flex items-center gap-2.5">
-              <BadgeCheck className="w-5 h-5 text-[#ff6b00] shrink-0" />
-              <span className="text-[13px] font-semibold text-[#2a1f61]">Formations éligibles au CPF</span>
-            </div>
-            <div className="flex items-center gap-2.5">
-              <Award className="w-5 h-5 text-[#ff6b00] shrink-0" />
-              <span className="text-[13px] font-semibold text-[#2a1f61]">Nominé — Prix Psychologie 2025</span>
-            </div>
+            <img
+              src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/264d6736b_image.png"
+              alt="Cette formation est éligible à Mon Compte Formation"
+              className="h-[78px] w-auto"
+            />
           </div>
         </motion.div>
 
