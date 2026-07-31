@@ -1,0 +1,49 @@
+{
+  "name": "Formation",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Relaxation",
+        "Th\u00e9rapeutique",
+        "Sp\u00e9cialis\u00e9e"
+      ]
+    },
+    "duration": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "level": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "highlights": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "cpf_eligible": {
+      "type": "boolean",
+      "default": true
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

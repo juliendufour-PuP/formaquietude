@@ -1,0 +1,46 @@
+{
+  "name": "Lead",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "formation_interest": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "funding": {
+      "type": "string",
+      "enum": [
+        "CPF",
+        "Personnel",
+        "P\u00f4le emploi",
+        "Entreprise",
+        "Je ne sais pas"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "rappel",
+        "reservation",
+        "barre_rapide"
+      ],
+      "default": "rappel"
+    }
+  },
+  "required": [
+    "full_name"
+  ]
+}

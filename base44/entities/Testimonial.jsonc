@@ -1,0 +1,23 @@
+{
+  "name": "Testimonial",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "quote": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "number",
+      "default": 5
+    }
+  },
+  "required": [
+    "name",
+    "quote"
+  ]
+}

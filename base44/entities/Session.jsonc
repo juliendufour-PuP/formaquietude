@@ -1,0 +1,32 @@
+{
+  "name": "Session",
+  "type": "object",
+  "properties": {
+    "formation_title": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "city": {
+      "type": "string"
+    },
+    "seats_total": {
+      "type": "number",
+      "default": 8
+    },
+    "seats_left": {
+      "type": "number",
+      "default": 8
+    }
+  },
+  "required": [
+    "formation_title",
+    "start_date"
+  ]
+}
