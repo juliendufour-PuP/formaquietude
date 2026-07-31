@@ -36,7 +36,7 @@ export default function FormationCard({ formation, nextSession, index, onSelect,
         <p className="mt-2 text-[13px] text-[#2a1f61]/50">{formation.duration} · {formation.level}</p>
         <p className="mt-4 text-[15px] leading-relaxed text-[#2a1f61]/70">{formation.description}</p>
 
-        <ul className="mt-5 space-y-2">
+        <ul className="mt-5 mb-6 space-y-2">
           {(formation.highlights || []).map((h) => (
             <li key={h} className="flex items-start gap-2.5 text-[14px] text-[#2a1f61]/75">
               <Check className="w-4 h-4 text-[#ff6b00] shrink-0 mt-0.5" /> {h}
@@ -44,8 +44,8 @@ export default function FormationCard({ formation, nextSession, index, onSelect,
           ))}
         </ul>
 
-        <div className="mt-6 pt-5 border-t border-[#2a1f61]/10 flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center">
+        <div className="mt-auto pt-5 border-t border-[#2a1f61]/10 flex flex-col items-start gap-4">
+          <div className="flex items-center min-h-[30px]">
             {nextSession ? (
               <span className="inline-flex items-center gap-2 rounded-full bg-[#f4f4f9] px-3 py-1.5 text-[12px] font-semibold text-[#2a1f61]">
                 <CalendarDays className="w-3.5 h-3.5 text-[#ff6b00]" />
@@ -57,7 +57,7 @@ export default function FormationCard({ formation, nextSession, index, onSelect,
           </div>
           <button
             onClick={() => onSelect(formation.title)}
-            className="inline-flex items-center gap-1.5 rounded-full bg-[#2a1f61] px-5 py-3 text-[13.5px] font-semibold text-white hover:bg-[#ff6b00] transition-colors"
+            className="w-full inline-flex items-center justify-center gap-1.5 rounded-full bg-[#2a1f61] px-5 py-3 text-[13.5px] font-semibold text-white hover:bg-[#ff6b00] transition-colors"
           >
             Être recontactée <ArrowUpRight className="w-4 h-4" />
           </button>
