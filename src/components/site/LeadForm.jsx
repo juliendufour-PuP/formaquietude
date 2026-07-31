@@ -8,7 +8,7 @@ const fundings = ['CPF', 'Personnel', 'Pôle emploi', 'Entreprise', 'Je ne sais 
 
 export default function LeadForm({ source = 'rappel', defaultFormation = '', sessionId = '', formations = [], onDone }) {
   const [form, setForm] = useState({
-    full_name: '', email: '', phone: '', message: '',
+    full_name: '', first_name: '', last_name: '', email: '', phone: '', message: '',
     formation_interest: defaultFormation, funding: 'CPF',
   });
   const [state, setState] = useState('idle');
@@ -18,14 +18,14 @@ export default function LeadForm({ source = 'rappel', defaultFormation = '', ses
 
   const submit = async (e) => {
     e.preventDefault();
-    if (!form.full_name.trim() || (!form.phone.trim() && !form.email.trim())) {
-      setError('Merci d’indiquer votre nom et un moyen de vous joindre.');
+    if (!form.first_name.trim() || !form.last_name.trim() || (!form.phone.trim() && !form.email.trim())) {
+      setError('Merci d’indiquer votre prénom, votre nom et un moyen de vous joindre.');
       return;
     }
     setError('');
     setState('loading');
     try {
-      await base44.entities.Lead.create({ ...form, session_id: sessionId, source });
+      await base44.entities.Lead.create({ ...form, full_name: `${form.first_name.trim()} ${form.last_name.trim()}`, session_id: sessionId, source });
       base44.analytics.track({ eventName: 'lead_submit', properties: { source } });
       setState('done');
       onDone && onDone();
@@ -54,10 +54,13 @@ export default function LeadForm({ source = 'rappel', defaultFormation = '', ses
   return (
     <form onSubmit={submit} className="space-y-4">
       <div className="grid sm:grid-cols-2 gap-4">
-        <Input className={inputCls} placeholder="Prénom et nom *" value={form.full_name} onChange={set('full_name')} />
-        <Input className={inputCls} placeholder="Téléphone" value={form.phone} onChange={set('phone')} />
+        <Input className={inputCls} placeholder="Prénom *" value={form.first_name} onChange={set('first_name')} />
+        <Input className={inputCls} placeholder="Nom *" value={form.last_name} onChange={set('last_name')} />
       </div>
-      <Input className={inputCls} type="email" placeholder="Adresse e-mail" value={form.email} onChange={set('email')} />
+      <div className="grid sm:grid-cols-2 gap-4">
+        <Input className={inputCls} placeholder="Téléphone" value={form.phone} onChange={set('phone')} />
+        <Input className={inputCls} type="email" placeholder="Adresse e-mail" value={form.email} onChange={set('email')} />
+      </div>
 
       {formations.length > 0 && (
         <select
