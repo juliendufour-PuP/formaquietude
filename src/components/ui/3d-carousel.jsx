@@ -1,75 +1,104 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import React, { useRef, useEffect } from 'react';
 
-const CARD_W = 210;
-const GAP = 18;
-const STEP = CARD_W + GAP;
-
-function Card({ card, index, x, center, onSelect }) {
-  // distance in px between this card's center and the viewport center
-  const dist = useTransform(x, (v) => v + index * STEP + CARD_W / 2 - center);
-  const rotateY = useTransform(dist, [-600, 0, 600], [38, 0, -38], { clamp: true });
-  const scale = useTransform(dist, [-600, 0, 600], [0.82, 1.06, 0.82], { clamp: true });
-  const opacity = useTransform(dist, [-800, -500, 0, 500, 800], [0.25, 0.85, 1, 0.85, 0.25]);
-  const z = useTransform(dist, (d) => -Math.abs(d) * 0.35);
-
-  return (
-    <motion.button
-      type="button"
-      onClick={() => onSelect && onSelect(card)}
-      style={{ width: CARD_W, rotateY, scale, opacity, z, transformStyle: 'preserve-3d' }}
-      className="shrink-0 text-left focus:outline-none"
-    >
-      <div className="overflow-hidden rounded-[22px] bg-[#2a1f61] p-1.5 shadow-[0_30px_60px_-28px_rgba(42,31,97,0.7)]">
-        <img
-          src={card.image}
-          alt={card.title}
-          draggable={false}
-          className="pointer-events-none w-full aspect-[4/3] rounded-[16px] object-cover"
-        />
-        <p className="min-h-[52px] px-3 pb-4 pt-3 text-[12.5px] font-bold leading-snug text-white">
-          {card.title}
-        </p>
-      </div>
-    </motion.button>
-  );
-}
+const CARD_W = 220;
+const GAP = 50;
+const SPEED = 0.025; // deg/frame ≈ 1,5°/s
 
 export function ThreeDPhotoCarousel({ cards = [], onSelect }) {
-  const wrapRef = useRef(null);
-  const x = useMotionValue(0);
-  const [width, setWidth] = useState(1000);
+  const stageRef = useRef(null);
+  const ringRef = useRef(null);
+  const n = cards.length || 1;
+  const step = 360 / n;
+  const radius = Math.round((n * (CARD_W + GAP)) / (2 * Math.PI));
 
   useEffect(() => {
-    const update = () => wrapRef.current && setWidth(wrapRef.current.offsetWidth);
-    update();
-    window.addEventListener('resize', update);
-    return () => window.removeEventListener('resize', update);
-  }, []);
+    const ring = ringRef.current;
+    const stage = stageRef.current;
+    if (!ring || !stage) return;
 
-  const total = cards.length * STEP;
-  const maxDrag = Math.max(0, total - width + 80);
+    let rot = 0;
+    let drag = null;
+    let hover = false;
+    let raf;
+
+    const paint = () => {
+      ring.style.transform = `translateZ(${-radius}px) rotateY(${rot.toFixed(2)}deg)`;
+    };
+    const loop = () => {
+      if (!hover && drag === null) rot += SPEED;
+      paint();
+      raf = requestAnimationFrame(loop);
+    };
+    loop();
+
+    const onEnter = () => { hover = true; };
+    const onLeave = () => { hover = false; drag = null; };
+    const onDown = (e) => { drag = e.clientX; };
+    const onMove = (e) => {
+      if (drag === null) return;
+      rot += (e.clientX - drag) * 0.25;
+      drag = e.clientX;
+      paint();
+    };
+    const onUp = () => { drag = null; };
+
+    stage.addEventListener('mouseenter', onEnter);
+    stage.addEventListener('mouseleave', onLeave);
+    stage.addEventListener('pointerdown', onDown);
+    stage.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      stage.removeEventListener('mouseenter', onEnter);
+      stage.removeEventListener('mouseleave', onLeave);
+      stage.removeEventListener('pointerdown', onDown);
+      stage.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+    };
+  }, [radius]);
 
   return (
-    <div ref={wrapRef} className="relative w-full overflow-hidden py-6">
-      <motion.div
-        drag="x"
-        dragConstraints={{ left: -maxDrag, right: 0 }}
-        dragElastic={0.08}
-        style={{ x, perspective: 1200, transformStyle: 'preserve-3d', gap: GAP }}
-        className="flex cursor-grab items-center px-6 active:cursor-grabbing"
+    <div
+      ref={stageRef}
+      className="relative h-[400px] w-full cursor-grab overflow-hidden active:cursor-grabbing"
+      style={{ perspective: '1500px', touchAction: 'pan-y' }}
+    >
+      <div
+        ref={ringRef}
+        className="absolute inset-0"
+        style={{ transformStyle: 'preserve-3d', transform: `translateZ(${-radius}px)` }}
       >
         {cards.map((card, i) => (
-          <Card
+          <div
             key={card.title}
-            card={card}
-            index={i}
-            x={x}
-            center={width / 2}
-            onSelect={onSelect}
-          />
+            onClick={() => onSelect && onSelect(card)}
+            className="absolute left-1/2 top-1/2"
+            style={{
+              width: CARD_W,
+              height: 300,
+              marginLeft: -CARD_W / 2,
+              marginTop: -150,
+              backfaceVisibility: 'hidden',
+              transform: `rotateY(${i * step}deg) translateZ(${radius}px)`,
+            }}
+          >
+            <div className="h-full w-full overflow-hidden rounded-2xl bg-[#2a1f61] shadow-[0_16px_40px_rgba(42,31,97,0.22)]">
+              <img
+                src={card.image}
+                alt={card.title}
+                draggable={false}
+                className="block h-[200px] w-full object-cover"
+              />
+              <div className="px-3.5 py-3 text-[13.5px] font-semibold leading-snug text-white">
+                {card.title}
+              </div>
+            </div>
+          </div>
         ))}
-      </motion.div>
+      </div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-[180px] bg-gradient-to-r from-[#f6f6fb] to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-[180px] bg-gradient-to-l from-[#f6f6fb] to-transparent" />
     </div>
   );
 }
