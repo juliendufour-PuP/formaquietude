@@ -23,8 +23,8 @@ export default function FormationCard({ formation, nextSession, index, onSelect,
           className="w-full h-[260px] transition-transform duration-700 group-hover:scale-[1.06]"
           fittingType="fill"
         />
-        <span className="absolute top-4 left-4 rounded-full bg-white/90 backdrop-blur px-3 py-1.5 text-[11px] font-semibold tracking-wide text-[#2a1f61]">
-          {formation.category}
+        <span className="absolute top-4 left-4 rounded-full bg-white/90 backdrop-blur px-3.5 py-1.5 text-[13px] font-semibold tracking-wide text-[#2a1f61]">
+          {formation.price} €
         </span>
         {formation.cpf_eligible && (
           <span className="absolute top-4 right-4 rounded-full bg-[#ff6b00] px-3 py-1.5 text-[11px] font-semibold text-white">CPF</span>
@@ -44,8 +44,8 @@ export default function FormationCard({ formation, nextSession, index, onSelect,
           ))}
         </ul>
 
-        <div className="mt-6 pt-5 border-t border-[#2a1f61]/10 flex items-end justify-between gap-4">
-          <div>
+        <div className="mt-6 pt-5 border-t border-[#2a1f61]/10 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center">
             {nextSession ? (
               <span className="inline-flex items-center gap-2 rounded-full bg-[#f4f4f9] px-3 py-1.5 text-[12px] font-semibold text-[#2a1f61]">
                 <CalendarDays className="w-3.5 h-3.5 text-[#ff6b00]" />
@@ -54,7 +54,6 @@ export default function FormationCard({ formation, nextSession, index, onSelect,
             ) : (
               <span className="text-[12px] text-[#2a1f61]/50">Dates sur demande</span>
             )}
-            <p className="mt-3 font-display text-2xl font-semibold text-[#2a1f61]">{formation.price} €</p>
           </div>
           <button
             onClick={() => onSelect(formation.title)}
