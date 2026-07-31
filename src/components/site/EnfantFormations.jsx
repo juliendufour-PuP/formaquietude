@@ -8,8 +8,10 @@ import {
   Award,
   Check,
   ArrowRight,
-  Sparkle } from
+  Sparkle,
+  CircleCheck } from
 'lucide-react';
+import { Image } from '@/components/ui/image';
 import SectionHeading from './SectionHeading';
 
 const formations = [
@@ -58,39 +60,83 @@ const formations = [
 export default function EnfantFormations({ onSelect }) {
   return (
     <>
-      <section id="financement" className="bg-[#2a1f61] py-16 lg:py-20">
+      <section id="financement" className="bg-[#f9f5f2] py-20 lg:py-28">
         <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 28 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-[26px] bg-white/[0.04] border border-white/10 p-8 sm:p-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-            
-            <div className="flex-1 text-center lg:text-left">
-              <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff6b00] mb-3">
-                Une expertise unique en France
-              </p>
-              <h3 className="font-display text-[1.8rem] sm:text-[2.2rem] leading-tight font-semibold text-white text-balance">
+            className="text-center">
+            <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#d6722d] mb-4">
+              Une expertise unique en France
+            </p>
+          </motion.div>
+
+          <div className="mt-10 grid gap-5 lg:grid-cols-3 items-stretch">
+            {/* Carte image — enfant en posture de relaxation */}
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-[26px] overflow-hidden bg-[#f5eee9] min-h-[340px]">
+              <Image
+                src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/bf240ae69_generated_image.png"
+                alt="Enfant en posture de relaxation ludique"
+                className="w-full h-full min-h-[340px]"
+                fittingType="fill"
+              />
+            </motion.div>
+
+            {/* Carte texte — expertise RS 7530 / CPF */}
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-[26px] bg-[#f5eee9] p-8 sm:p-10 flex flex-col justify-center">
+              <h3 className="font-display text-[1.5rem] sm:text-[1.85rem] leading-[1.18] font-semibold text-[#232049] text-balance">
                 Le seul centre en France à proposer des formations certifiantes RS éligibles au CPF en relaxation ludique pour enfants
               </h3>
-              <p className="mt-4 text-[15.5px] leading-relaxed text-white/70 max-w-2xl">
+              <p className="mt-5 text-[14.5px] leading-relaxed text-[#d6722d]">
                 Nos formations sont enregistrées au Répertoire Spécifique de France Compétences (RS 7530) et intégralement financables via votre CPF — sans avance de frais dans la majorité des cas.
               </p>
-            </div>
-            <div className="flex items-center justify-center gap-5 shrink-0">
+            </motion.div>
+
+            {/* Carte badges CPF / Qualiopi sur fond confetti pastel */}
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.7, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
+              className="relative rounded-[26px] bg-[#f5eee9] overflow-hidden p-8 flex flex-col items-center justify-center gap-5">
               <img
-                src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/264d6736b_image.png"
-                alt="Éligible Mon Compte Formation"
-                className="h-[64px] w-auto rounded-lg bg-white p-1" />
-              
-              <img
-                src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/22ccf1530_image.png"
-                alt="Qualiopi — processus certifié"
-                className="h-[52px] w-auto rounded-lg bg-white px-5 py-1" />
-              
-            </div>
-          </motion.div>
+                src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/c349b6a1c_generated_image.png"
+                alt=""
+                aria-hidden
+                className="absolute inset-0 w-full h-full object-cover opacity-70 pointer-events-none"
+              />
+              <div className="relative z-10 flex flex-col items-center gap-5 w-full">
+                <span className="flex items-center justify-center w-12 h-12 rounded-full bg-[#a3b18a] text-white shadow-sm">
+                  <CircleCheck className="w-6 h-6" strokeWidth={2.2} />
+                </span>
+                <img
+                  src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/264d6736b_image.png"
+                  alt="Éligible Mon Compte Formation"
+                  className="h-[58px] w-auto rounded-xl bg-white p-1.5 shadow-sm"
+                />
+                <img
+                  src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/22ccf1530_image.png"
+                  alt="Qualiopi — processus certifié"
+                  className="h-[46px] w-auto rounded-xl bg-white px-5 py-1 shadow-sm"
+                />
+                <span className="flex items-center justify-center w-12 h-12 rounded-full bg-[#a3b18a] text-white shadow-sm">
+                  <HeartHandshake className="w-6 h-6" strokeWidth={2.2} />
+                </span>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
