@@ -30,9 +30,10 @@ const types = [
 export default function MassageField() {
   return (
     <section className="relative bg-[#2a1f61] overflow-hidden">
-      <div className="absolute inset-0 opacity-45">
+      <div className="absolute inset-0">
         <InfiniteImageField
           images={MASSAGE_IMAGES}
+          labels={types}
           imageWidth={200}
           imageHeight={280}
           gap={24}
@@ -40,9 +41,7 @@ export default function MassageField() {
           maxSpeed={4}
         />
       </div>
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#2a1f61]/90 via-[#2a1f61]/60 to-[#2a1f61]/95" />
-
-      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 py-24 lg:py-32 text-center">
+      <div className="relative mx-auto max-w-3xl px-5 sm:px-8 py-24 lg:py-32 text-center [text-shadow:0_2px_24px_rgba(20,14,50,0.9)]">
         <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff6b00] mb-5">
           Nos techniques enseignées
         </p>

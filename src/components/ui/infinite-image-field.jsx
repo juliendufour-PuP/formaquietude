@@ -19,6 +19,7 @@ function drawRoundedRect(ctx, x, y, w, h, r) {
 export function InfiniteImageField({
   className,
   images = [],
+  labels = [],
   imageWidth = 200,
   imageHeight = 280,
   gap = 28,
@@ -99,6 +100,32 @@ export function InfiniteImageField({
           ctx.fillStyle = "rgba(255,255,255,0.08)";
           ctx.fillRect(sx, sy, imageWidth, imageHeight);
         }
+        const label = labels[imgIdx];
+        if (label) {
+          const grad = ctx.createLinearGradient(0, sy + imageHeight - 110, 0, sy + imageHeight);
+          grad.addColorStop(0, "rgba(20,14,50,0)");
+          grad.addColorStop(1, "rgba(20,14,50,0.85)");
+          ctx.fillStyle = grad;
+          ctx.fillRect(sx, sy + imageHeight - 110, imageWidth, 110);
+
+          ctx.fillStyle = "#ffffff";
+          ctx.font = "600 14px 'Plus Jakarta Sans', sans-serif";
+          ctx.textBaseline = "bottom";
+          const words = label.split(" ");
+          const lines = [];
+          let line = "";
+          for (const w of words) {
+            const test = line ? `${line} ${w}` : w;
+            if (ctx.measureText(test).width > imageWidth - 28 && line) {
+              lines.push(line);
+              line = w;
+            } else line = test;
+          }
+          if (line) lines.push(line);
+          lines.forEach((l, i) => {
+            ctx.fillText(l, sx + 14, sy + imageHeight - 16 - (lines.length - 1 - i) * 18);
+          });
+        }
         ctx.restore();
 
         ctx.save();
@@ -111,7 +138,7 @@ export function InfiniteImageField({
     }
 
     rafRef.current = requestAnimationFrame(draw);
-  }, [imageWidth, imageHeight, gap, maxSpeed, smoothing, borderRadius]);
+  }, [imageWidth, imageHeight, gap, maxSpeed, smoothing, borderRadius, labels]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
