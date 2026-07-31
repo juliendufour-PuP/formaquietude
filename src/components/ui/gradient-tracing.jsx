@@ -12,11 +12,9 @@ export function GradientTracing({
   fluid = false,
   reverse = false,
 }) {
-  const gradientId = `pulse-${useId().replace(/[:]/g, '')}`;
-  const x1From = reverse ? width : -width * 0.5;
-  const x1To = reverse ? -width * 0.5 : width;
-  const x2From = reverse ? width * 1.5 : 0;
-  const x2To = reverse ? 0 : width * 1.5;
+  const rawId = useId().replace(/[:]/g, '');
+  const gradientId = `pulse-${rawId}`;
+  const animName = `gt-${rawId}`;
 
   return (
     <div className={`relative ${className}`} style={{ width: fluid ? '100%' : width, height }}>
@@ -28,29 +26,26 @@ export function GradientTracing({
         fill="none"
       >
         <path d={path} stroke={baseColor} strokeOpacity="0.15" strokeWidth={strokeWidth} />
-        <path d={path} stroke={`url(#${gradientId})`} strokeLinecap="round" strokeWidth={strokeWidth} />
+        <path
+          d={path}
+          stroke={`url(#${gradientId})`}
+          strokeLinecap="round"
+          strokeWidth={strokeWidth}
+          strokeDasharray="70 1800"
+          style={{
+            animation: `${animName} ${animationDuration}s linear infinite`,
+            animationDirection: reverse ? 'reverse' : 'normal',
+          }}
+        />
         <defs>
-          <linearGradient id={gradientId} gradientUnits="userSpaceOnUse">
+          <linearGradient id={gradientId} gradientUnits="userSpaceOnUse" x1="0" y1="0" x2={width} y2="0">
             <stop stopColor={gradientColors[0]} stopOpacity="0" />
-            <stop stopColor={gradientColors[1]} />
+            <stop offset="0.5" stopColor={gradientColors[1]} />
             <stop offset="1" stopColor={gradientColors[2]} stopOpacity="0" />
-            <animate
-              attributeName="x1"
-              from={x1From}
-              to={x1To}
-              dur={`${animationDuration}s`}
-              repeatCount="indefinite"
-            />
-            <animate
-              attributeName="x2"
-              from={x2From}
-              to={x2To}
-              dur={`${animationDuration}s`}
-              repeatCount="indefinite"
-            />
           </linearGradient>
         </defs>
       </svg>
+      <style>{`@keyframes ${animName}{to{stroke-dashoffset:-1870}}`}</style>
     </div>
   );
 }
