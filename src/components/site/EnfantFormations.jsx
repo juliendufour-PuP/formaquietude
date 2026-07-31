@@ -8,8 +8,7 @@ import {
   Award,
   Check,
   ArrowRight,
-  Sparkle,
-  CircleCheck } from
+  Sparkle } from
 'lucide-react';
 import { Image } from '@/components/ui/image';
 import SectionHeading from './SectionHeading';
@@ -51,7 +50,7 @@ const formations = [
   title: 'Intégrer la relaxation ludique dans ses pratiques éducatives et de soutien',
   duration: '42 h · classe virtuelle',
   price: "1 500 \u20AC",
-  desc: 'Certification professionnelle RS 7530 enregistrée par France Compétences, éligible au CPF. Concevoir et animer des séances adaptées à chaque enfant, y compris en situation de handicap.',
+  desc: 'Certification professionnelle RS 7530 enregistrée par France Compétence, éligible au CPF. Concevoir et animer des séances adaptées à chaque enfant, y compris en situation de handicap.',
   badge: "Certification RS 7530",
   featured: true
 }];
@@ -60,83 +59,50 @@ const formations = [
 export default function EnfantFormations({ onSelect }) {
   return (
     <>
-      <section id="financement" className="bg-[#f9f5f2] py-20 lg:py-28">
+      <section id="financement" className="bg-[#fff9f0] py-20 lg:py-28">
         <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="text-center">
-            <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#d6722d] mb-4">
-              Une expertise unique en France
-            </p>
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="relative overflow-hidden rounded-[28px] min-h-[480px] lg:min-h-[560px]">
+            <Image
+              src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/bf240ae69_generated_image.png"
+              alt="Enfant en posture de relaxation ludique"
+              className="absolute inset-0 w-full h-full"
+              fittingType="fill" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#2a1f61]/92 via-[#2a1f61]/88 to-[#402b8c]/82" />
+
+            <div className="relative h-full min-h-[480px] lg:min-h-[560px] flex flex-col justify-center gap-8 p-10 sm:p-14 lg:p-20 max-w-[1000px]">
+              <div>
+                <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff8c1a] mb-5">
+                  Une expertise unique en France
+                </p>
+                <h2 className="font-display text-white text-[1.9rem] sm:text-[2.4rem] lg:text-[2.7rem] leading-[1.12] font-semibold text-balance">
+                  Le seul centre en France à proposer des formations certifiantes RS éligibles au CPF en relaxation ludique pour enfants
+                </h2>
+                <p className="mt-6 text-[15px] sm:text-[16px] leading-relaxed text-white/80 max-w-[620px]">
+                  Nos formations sont enregistrées au Répertoire Spécifique de France Compétences (RS 7530) et intégralement financables via votre CPF — sans avance de frais dans la majorité des cas.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-4">
+                <span className="rounded-xl bg-white px-5 py-2.5 shadow-[0_8px_24px_-10px_rgba(0,0,0,0.4)]">
+                  <img
+                    src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/264d6736b_image.png"
+                    alt="Éligible Mon Compte Formation"
+                    className="h-12 w-auto" />
+                </span>
+                <span className="rounded-xl bg-white px-6 py-2.5 shadow-[0_8px_24px_-10px_rgba(0,0,0,0.4)]">
+                  <img
+                    src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/22ccf1530_image.png"
+                    alt="Qualiopi — processus certifié"
+                    className="h-10 w-auto" />
+                </span>
+              </div>
+            </div>
           </motion.div>
-
-          <div className="mt-10 grid gap-5 lg:grid-cols-3 items-stretch">
-            {/* Carte image — enfant en posture de relaxation */}
-            <motion.div
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-[26px] overflow-hidden bg-[#f5eee9] min-h-[340px]">
-              <Image
-                src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/bf240ae69_generated_image.png"
-                alt="Enfant en posture de relaxation ludique"
-                className="w-full h-full min-h-[340px]"
-                fittingType="fill" />
-              
-            </motion.div>
-
-            {/* Carte texte — expertise RS 7530 / CPF */}
-            <motion.div
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-[26px] bg-[#f5eee9] p-8 sm:p-10 flex flex-col justify-center">
-              <h3 className="font-display text-[1.5rem] sm:text-[1.85rem] leading-[1.18] font-semibold text-[#232049] text-balance">
-                Le seul centre en France à proposer des formations certifiantes RS éligibles au CPF en relaxation ludique pour enfants
-              </h3>
-              <p className="mt-5 text-[14.5px] leading-relaxed text-[#d6722d]">
-                Nos formations sont enregistrées au Répertoire Spécifique de France Compétences (RS 7530) et intégralement financables via votre CPF — sans avance de frais dans la majorité des cas.
-              </p>
-            </motion.div>
-
-            {/* Carte badges CPF / Qualiopi sur fond confetti pastel */}
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-          </div>
         </div>
       </section>
 
@@ -146,7 +112,7 @@ export default function EnfantFormations({ onSelect }) {
             eyebrow="Le cursus relaxation ludique"
             title="5 formations pour accompagner le bien-être de l’enfant"
             subtitle="Un parcours complet, de l’éveil du jeune enfant à la certification RS 7530, pour les professionnelles et les futures praticiennes qui veulent intervenir auprès des enfants." />
-          
+
 
           <div className="mt-16 grid gap-6 lg:grid-cols-2">
             {formations.map((f, i) =>
@@ -157,7 +123,7 @@ export default function EnfantFormations({ onSelect }) {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
               className={`relative flex flex-col rounded-[22px] p-8 border ${f.featured ? 'bg-[#2a1f61] border-[#2a1f61] text-white shadow-[0_40px_80px_-40px_rgba(42,31,97,0.7)] lg:col-span-2 lg:max-w-[calc(50%-0.75rem)] lg:mx-auto' : 'bg-white border-[#2a1f61]/10'}`}>
-              
+
                 <span className="absolute -top-3 right-6 rounded-full bg-[#ff6b00] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-white shadow-[0_8px_24px_-8px_rgba(255,107,0,0.8)]">éligible CPF
 
               </span>
@@ -192,7 +158,7 @@ export default function EnfantFormations({ onSelect }) {
                 <button
                 onClick={() => onSelect && onSelect(f.title)}
                 className={`mt-7 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[14px] font-semibold transition-colors ${f.featured ? 'bg-[#ff6b00] text-white hover:brightness-95' : 'bg-[#2a1f61] text-white hover:bg-[#ff6b00]'}`}>
-                
+
                   Je souhaite être recontactée <ArrowRight className="w-4 h-4" />
                 </button>
               </motion.div>
