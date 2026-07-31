@@ -72,7 +72,7 @@ export default function EnfantFormations({ onSelect }) {
               alt="Enfant en posture de relaxation ludique"
               className="absolute inset-0 w-full h-full"
               fittingType="fill" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#15103a] via-[#2a1f61]/75 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1a1546]/70 via-[#2a1f61]/30 to-transparent" />
 
             <span className="absolute top-6 right-6 sm:top-8 sm:right-8 z-10 flex items-center justify-center w-[112px] h-[112px] sm:w-[132px] sm:h-[132px] rounded-full bg-[#ff6b00] text-center shadow-[0_18px_40px_-12px_rgba(0,0,0,0.5)] ring-4 ring-white/90 rotate-[-6deg]">
               <span className="px-2 text-[10px] sm:text-[11px] leading-tight font-semibold uppercase tracking-[0.12em] text-white">
