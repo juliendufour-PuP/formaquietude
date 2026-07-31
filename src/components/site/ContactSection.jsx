@@ -16,10 +16,10 @@ export default function ContactSection({ formations }) {
           <h2 className="font-display text-[2.4rem] sm:text-5xl leading-[1.03] font-semibold text-white text-balance">Parlons de votre projet formation
 
           </h2>
-          <p className="mt-6 text-[17px] leading-relaxed text-white/70 max-w-lg hidden">
-            20 minutes au téléphone avec une conseillère pédagogique : le bon cursus, les dates réalistes,
-            et le financement CPF calculé pour votre situation. Sans engagement.
-          </p>
+          
+
+
+          
           <ul className="mt-10 space-y-4">
             {[
             [Clock, 'Rappel sous 24 h ouvrées'],
