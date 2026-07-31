@@ -61,7 +61,7 @@ export default function Pricing({ onSelect }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className={`relative rounded-[26px] p-8 sm:p-10 border ${p.featured ? 'bg-[#2a1f61] border-[#2a1f61] text-white shadow-[0_40px_80px_-40px_rgba(42,31,97,0.7)]' : 'bg-white border-[#2a1f61]/10'}`}>
+            className={`relative h-full flex flex-col rounded-[26px] p-8 sm:p-10 border ${p.featured ? 'bg-[#2a1f61] border-[#2a1f61] text-white shadow-[0_40px_80px_-40px_rgba(42,31,97,0.7)]' : 'bg-white border-[#2a1f61]/10'}`}>
 
               <span className="absolute -top-3 left-8 rounded-full bg-[#ff6b00] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white shadow-[0_8px_24px_-8px_rgba(255,107,0,0.8)]">
                 En présentiel à Grenoble
@@ -85,21 +85,6 @@ export default function Pricing({ onSelect }) {
                 <p className={`text-[13px] font-medium ${p.featured ? 'text-white/70' : 'text-[#ff6b00]'}`}>Paiement possible en 3, 4 ou 10 fois</p>
               </div>
 
-              {p.featured &&
-            <div className="mt-6 flex items-center gap-4">
-                  <img
-                src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/264d6736b_image.png"
-                alt="Éligible Mon Compte Formation"
-                className="h-[62px] w-auto rounded-lg bg-white p-1" />
-              
-                  <img
-                src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/22ccf1530_image.png"
-                alt="Qualiopi — processus certifié"
-                className="h-[50px] w-auto rounded-lg bg-white p-1" />
-              
-                </div>
-            }
-
               <button
               onClick={() => onSelect && onSelect(p.title)}
               className={`mt-8 w-full rounded-full px-7 py-4 text-[15px] font-semibold transition-colors ${p.featured ? 'bg-[#ff6b00] text-white hover:brightness-95' : 'bg-[#2a1f61] text-white hover:bg-[#ff6b00]'}`}>
@@ -107,7 +92,7 @@ export default function Pricing({ onSelect }) {
                 {p.cta}
               </button>
 
-              <ul className="mt-8 space-y-3">
+              <ul className="mt-8 space-y-3 flex-1">
                 {p.items.map((it) =>
               <li
                 key={it.t}
@@ -129,6 +114,19 @@ export default function Pricing({ onSelect }) {
                   </li>
               )}
               </ul>
+
+              {p.featured &&
+                <div className="mt-8 flex items-center gap-4">
+                  <img
+                    src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/264d6736b_image.png"
+                    alt="Éligible Mon Compte Formation"
+                    className="h-[62px] w-auto rounded-lg bg-white p-1" />
+                  <img
+                    src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/22ccf1530_image.png"
+                    alt="Qualiopi — processus certifié"
+                    className="h-[50px] w-auto rounded-lg bg-white p-1" />
+                </div>
+              }
             </motion.div>
           )}
         </div>
