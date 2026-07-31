@@ -23,7 +23,7 @@ export default function BookingBackdrop({
           path="M0,60 C350,200 750,-40 1200,140"
           baseColor={baseColor}
           gradientColors={gradientColors}
-          animationDuration={4.4}
+          animationDuration={6}
           strokeWidth={5}
           fluid
           reverse={reverse}
