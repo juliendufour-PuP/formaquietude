@@ -40,24 +40,24 @@ export default function Hero() {
             </button>
           </div>
 
-          <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-5 border-t border-[#2a1f61]/10 pt-8">
-            <div className="text-center">
+          <div className="mt-12 flex flex-wrap items-center justify-center sm:justify-start gap-x-12 gap-y-8 border-t border-[#2a1f61]/10 pt-8">
+            <div className="flex flex-col items-center">
               <img
                 src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/f8c9f2d2e_png-clipart-logo-google-customer-service-review-google.png"
                 alt="Avis Google"
-                className="h-[46px] w-auto mx-auto"
+                className="h-[70px] w-auto mix-blend-multiply"
               />
-              <p className="mt-2 text-[13px] font-semibold text-[#2a1f61]">4,9/5 sur 312 avis Google</p>
+              <p className="mt-2 text-[13.5px] font-semibold text-[#2a1f61]">4,9/5 sur 312 avis Google</p>
             </div>
             <img
               src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/264d6736b_image.png"
               alt="Cette formation est éligible à Mon Compte Formation"
-              className="h-[78px] w-auto"
+              className="h-[110px] w-auto self-center"
             />
             <img
               src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/22ccf1530_image.png"
               alt="Qualiopi — processus certifié"
-              className="h-[62px] w-auto"
+              className="h-[90px] w-auto self-center"
             />
           </div>
         </motion.div>
