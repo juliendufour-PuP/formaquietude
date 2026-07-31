@@ -50,7 +50,7 @@ const formations = [
   duration: '42 h · classe virtuelle',
   price: '1 500 € NET',
   desc: 'Certification professionnelle RS 7530 enregistrée par France Compétences, éligible au CPF. Concevoir et animer des séances adaptées à chaque enfant, y compris en situation de handicap.',
-  badge: 'Certification RS 7530 — éligible CPF',
+  badge: "Certification RS 7530",
   featured: true
 }];
 
