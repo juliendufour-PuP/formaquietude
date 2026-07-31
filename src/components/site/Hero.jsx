@@ -14,12 +14,7 @@ export default function Hero() {
         baseColor="#2a1f61"
         gradientColors={['#ff6b00', '#ff6b00', '#2a1f61']}
         opacityClass="opacity-60"
-      />
-      <img
-        src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/659c19b0e_logo-formaquietude.png"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none select-none absolute -left-32 top-10 w-[46vw] max-w-[720px] opacity-[0.06] hidden lg:block"
+        top="4%"
       />
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 grid lg:grid-cols-[1fr_0.95fr] gap-14 items-center">
         <motion.div

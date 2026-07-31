@@ -5,6 +5,7 @@ export default function BookingBackdrop({
   baseColor = 'transparent',
   gradientColors = ['#ff6b00', '#ff6b00', '#ffffff'],
   opacityClass = 'opacity-70',
+  top = '38%',
 }) {
   return (
     <div
@@ -14,7 +15,7 @@ export default function BookingBackdrop({
         WebkitMaskImage: 'linear-gradient(to right, black 0%, black 85%, transparent)',
       }}
     >
-      <div className="absolute left-0 w-full top-[38%]">
+      <div className="absolute left-0 w-full" style={{ top }}>
         <GradientTracing
           width={1200}
           height={240}
