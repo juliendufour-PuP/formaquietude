@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, ArrowDown } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import MagneticButton from './MagneticButton';
 
@@ -41,14 +41,23 @@ export default function Hero() {
           </div>
 
           <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-5 border-t border-[#2a1f61]/10 pt-8">
-            <div className="flex items-center gap-1">
-              {[0, 1, 2, 3, 4].map((i) => <Star key={i} className="w-4 h-4 fill-[#ff6b00] text-[#ff6b00]" />)}
-              <span className="ml-2 text-[13px] font-semibold text-[#2a1f61]">4,9 / 5 — 312 avis Google</span>
+            <div className="text-center">
+              <img
+                src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/14e094c96_png-clipart-logo-google-customer-service-review-google.png"
+                alt="Avis Google"
+                className="h-[46px] w-auto mx-auto"
+              />
+              <p className="mt-2 text-[13px] font-semibold text-[#2a1f61]">4,9/5 sur 312 avis Google</p>
             </div>
             <img
               src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/264d6736b_image.png"
               alt="Cette formation est éligible à Mon Compte Formation"
               className="h-[78px] w-auto"
+            />
+            <img
+              src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/22ccf1530_image.png"
+              alt="Qualiopi — processus certifié"
+              className="h-[62px] w-auto"
             />
           </div>
         </motion.div>
