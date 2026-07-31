@@ -1,74 +1,75 @@
-import { memo } from 'react';
-import { motion, useAnimation, useMotionValue, useTransform } from 'framer-motion';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 
-const transition = { duration: 0.15, ease: [0.32, 0.72, 0, 1] };
+const CARD_W = 210;
+const GAP = 18;
+const STEP = CARD_W + GAP;
 
-const Cylinder = memo(({ cards, controls, onSelect }) => {
-  const isSmall = typeof window !== 'undefined' && window.innerWidth <= 640;
-  const cylinderWidth = isSmall ? 3200 : 7000;
-  const faceCount = cards.length;
-  const faceWidth = cylinderWidth / faceCount;
-  const radius = cylinderWidth / (2 * Math.PI);
-  const rotation = useMotionValue(0);
-  const transform = useTransform(rotation, (v) => `rotate3d(0, 1, 0, ${v}deg)`);
+function Card({ card, index, x, center, onSelect }) {
+  // distance in px between this card's center and the viewport center
+  const dist = useTransform(x, (v) => v + index * STEP + CARD_W / 2 - center);
+  const rotateY = useTransform(dist, [-600, 0, 600], [38, 0, -38], { clamp: true });
+  const scale = useTransform(dist, [-600, 0, 600], [0.82, 1.06, 0.82], { clamp: true });
+  const opacity = useTransform(dist, [-800, -500, 0, 500, 800], [0.25, 0.85, 1, 0.85, 0.25]);
+  const z = useTransform(dist, (d) => -Math.abs(d) * 0.35);
 
   return (
-    <div
-      className="flex h-full items-center justify-center"
-      style={{ perspective: '1200px', transformStyle: 'preserve-3d', willChange: 'transform' }}
+    <motion.button
+      type="button"
+      onClick={() => onSelect && onSelect(card)}
+      style={{ width: CARD_W, rotateY, scale, opacity, z, transformStyle: 'preserve-3d' }}
+      className="shrink-0 text-left focus:outline-none"
     >
-      <motion.div
-        drag="x"
-        className="relative flex h-full origin-center cursor-grab justify-center active:cursor-grabbing"
-        style={{ transform, rotateY: rotation, width: cylinderWidth, transformStyle: 'preserve-3d' }}
-        onDrag={(_, info) => rotation.set(rotation.get() + info.offset.x * 0.05)}
-        onDragEnd={(_, info) =>
-          controls.start({
-            rotateY: rotation.get() + info.velocity.x * 0.05,
-            transition: { type: 'spring', stiffness: 100, damping: 30, mass: 0.1 },
-          })
-        }
-        animate={controls}
-      >
-        {cards.map((card, i) => (
-          <motion.div
-            key={card.title}
-            className="absolute flex h-full origin-center items-center justify-center p-2"
-            style={{
-              width: `${faceWidth}px`,
-              transform: `rotateY(${i * (360 / faceCount)}deg) translateZ(${radius}px)`,
-            }}
-            onClick={() => onSelect && onSelect(card)}
-          >
-            <motion.div
-              className="w-full overflow-hidden rounded-[22px] bg-[#2a1f61] p-1.5 shadow-[0_30px_60px_-30px_rgba(42,31,97,0.65)]"
-              initial={{ filter: 'blur(4px)' }}
-              animate={{ filter: 'blur(0px)' }}
-              transition={transition}
-            >
-              <img
-                src={card.image}
-                alt={card.title}
-                draggable={false}
-                className="pointer-events-none w-full aspect-[4/3] rounded-[16px] object-cover"
-              />
-              <p className="px-3 pb-4 pt-4 text-[13px] font-bold leading-snug text-white">
-                {card.title}
-              </p>
-            </motion.div>
-          </motion.div>
-        ))}
-      </motion.div>
-    </div>
+      <div className="overflow-hidden rounded-[22px] bg-[#2a1f61] p-1.5 shadow-[0_30px_60px_-28px_rgba(42,31,97,0.7)]">
+        <img
+          src={card.image}
+          alt={card.title}
+          draggable={false}
+          className="pointer-events-none w-full aspect-[4/3] rounded-[16px] object-cover"
+        />
+        <p className="min-h-[52px] px-3 pb-4 pt-3 text-[12.5px] font-bold leading-snug text-white">
+          {card.title}
+        </p>
+      </div>
+    </motion.button>
   );
-});
-Cylinder.displayName = 'Cylinder';
+}
 
 export function ThreeDPhotoCarousel({ cards = [], onSelect }) {
-  const controls = useAnimation();
+  const wrapRef = useRef(null);
+  const x = useMotionValue(0);
+  const [width, setWidth] = useState(1000);
+
+  useEffect(() => {
+    const update = () => wrapRef.current && setWidth(wrapRef.current.offsetWidth);
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
+  const total = cards.length * STEP;
+  const maxDrag = Math.max(0, total - width + 80);
+
   return (
-    <div className="relative h-[460px] sm:h-[520px] w-full overflow-hidden">
-      <Cylinder cards={cards} controls={controls} onSelect={onSelect} />
+    <div ref={wrapRef} className="relative w-full overflow-hidden py-6">
+      <motion.div
+        drag="x"
+        dragConstraints={{ left: -maxDrag, right: 0 }}
+        dragElastic={0.08}
+        style={{ x, perspective: 1200, transformStyle: 'preserve-3d', gap: GAP }}
+        className="flex cursor-grab items-center px-6 active:cursor-grabbing"
+      >
+        {cards.map((card, i) => (
+          <Card
+            key={card.title}
+            card={card}
+            index={i}
+            x={x}
+            center={width / 2}
+            onSelect={onSelect}
+          />
+        ))}
+      </motion.div>
     </div>
   );
 }
