@@ -62,27 +62,27 @@ export default function EnfantObjectifs() {
           </div>
 
           <div className="flex flex-col gap-5">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="rounded-[22px] bg-[#f5eee9] p-7 hidden">
-              
-              <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#d6722d] mb-5">
-                En pratique
-              </p>
-              <ul className="space-y-4">
-                {practical.map((p) =>
-                <li key={p.label} className="flex items-center gap-3 text-[15px] font-medium text-[#232049]">
-                    <span className="flex items-center justify-center w-9 h-9 rounded-full bg-white text-[#2a1f61] shadow-sm">
-                      <p.icon className="w-4 h-4" strokeWidth={2} />
-                    </span>
-                    {p.label}
-                  </li>
-                )}
-              </ul>
-            </motion.div>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
 
             <div className="grid grid-cols-2 gap-4">
               {stats.map((s, i) =>
@@ -100,7 +100,7 @@ export default function EnfantObjectifs() {
                 </motion.div>
               )}
             </div>
-            <p className="text-[12px] text-center text-[#232049]/50 hidden">Chiffres 2021</p>
+            
           </div>
         </div>
       </div>
