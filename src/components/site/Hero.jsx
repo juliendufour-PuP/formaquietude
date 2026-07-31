@@ -43,7 +43,7 @@ export default function Hero() {
           <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-5 border-t border-[#2a1f61]/10 pt-8">
             <div className="text-center">
               <img
-                src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/14e094c96_png-clipart-logo-google-customer-service-review-google.png"
+                src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/f8c9f2d2e_png-clipart-logo-google-customer-service-review-google.png"
                 alt="Avis Google"
                 className="h-[46px] w-auto mx-auto"
               />
@@ -76,20 +76,21 @@ export default function Hero() {
             />
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.5 }}
-            className="absolute -bottom-8 left-4 right-4 sm:left-auto sm:-left-10 sm:right-auto sm:w-[330px] rounded-[22px] border border-white/60 bg-white/80 backdrop-blur-xl p-6 shadow-[0_30px_60px_-30px_rgba(42,31,97,0.45)]"
-          >
-            <div className="grid grid-cols-3 gap-3">
-              {[['15 ans', 'd’expérience terrain'], ['2 400+', 'praticiennes formées'], ['8', 'élèves maximum']].map(([n, l]) => (
-                <div key={n}>
-                  <p className="font-display text-2xl sm:text-3xl font-semibold text-[#2a1f61] leading-none">{n}</p>
-                  <p className="text-[11.5px] text-[#2a1f61]/55 mt-2 leading-snug">{l}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+          {[
+            { n: '15 ans', l: 'd’expérience terrain', pos: '-top-5 -right-3 sm:-right-8', d: 0.45 },
+            { n: '2 400+', l: 'praticiennes formées', pos: '-bottom-6 -right-3 sm:-right-8', d: 0.6 },
+            { n: '8', l: 'élèves maximum', pos: '-bottom-6 -left-3 sm:-left-8', d: 0.75 },
+          ].map((s) => (
+            <motion.div
+              key={s.n}
+              initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: s.d }}
+              className={`absolute ${s.pos} rounded-[18px] border border-white/60 bg-white/85 backdrop-blur-xl px-5 py-4 shadow-[0_24px_50px_-28px_rgba(42,31,97,0.6)]`}
+            >
+              <p className="font-display text-2xl sm:text-3xl font-semibold text-[#2a1f61] leading-none">{s.n}</p>
+              <p className="text-[11.5px] text-[#2a1f61]/55 mt-1.5 leading-snug max-w-[110px]">{s.l}</p>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
