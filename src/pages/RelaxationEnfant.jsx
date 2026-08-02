@@ -10,6 +10,7 @@ import EnfantObjectifs from '@/components/site/EnfantObjectifs';
 import ProofTicker from '@/components/site/ProofTicker';
 import Faq from '@/components/site/Faq';
 import ContactSection from '@/components/site/ContactSection';
+import WaveDivider from '@/components/site/WaveDivider';
 import LeadForm from '@/components/site/LeadForm';
 
 const TITLES = [
@@ -38,6 +39,7 @@ export default function RelaxationEnfant() {
       <EnfantObjectifs />
       <ProofTicker testimonials={testimonials} />
       <Faq />
+      <WaveDivider />
       <ContactSection formations={TITLES} />
 
       <Dialog open={!!dialog} onOpenChange={(o) => !o && setDialog(null)}>
