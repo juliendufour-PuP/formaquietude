@@ -12,6 +12,7 @@ import Pricing from '@/components/site/Pricing';
 import ProofTicker from '@/components/site/ProofTicker';
 import Faq from '@/components/site/Faq';
 import ContactSection from '@/components/site/ContactSection';
+import WaveDivider from '@/components/site/WaveDivider';
 import LeadForm from '@/components/site/LeadForm';
 
 export default function Home() {
@@ -44,6 +45,7 @@ export default function Home() {
       <ScrollProgress />
       <Navbar />
       <Hero />
+      <WaveDivider />
       <MassageCarousel onSelect={(title) => setDialog({ title, sessionId: '', kind: 'rappel' })} />
       <Curriculum
         formations={formations}
@@ -60,6 +62,7 @@ export default function Home() {
       <Pricing onSelect={(title) => setDialog({ title, sessionId: '', kind: 'rappel' })} />
       <ProofTicker testimonials={testimonials} />
       <Faq />
+      <WaveDivider />
       <ContactSection formations={titles} />
 
       <Dialog open={!!dialog} onOpenChange={(o) => !o && setDialog(null)}>
