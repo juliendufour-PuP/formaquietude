@@ -52,7 +52,7 @@ export default function MethodEnfant() {
 
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
               <div className="flex-1">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 hidden">
                   <span className="flex items-center justify-center w-11 h-11 rounded-full bg-[#ff6b00]/20 text-[#ff8c1a]">
                     <Sparkles className="w-5 h-5" />
                   </span>
@@ -72,9 +72,9 @@ export default function MethodEnfant() {
                 <div className="marquee-wrap relative overflow-hidden">
                   <div className="marquee-track flex gap-4 w-max">
                     {[...objectives, ...objectives].map((o, i) =>
-                      <div
-                        key={`${o.n}-${i}`}
-                        className="flex flex-col gap-3 w-[260px] shrink-0 rounded-[20px] bg-white/10 border border-white/15 px-5 py-6 backdrop-blur-sm">
+                    <div
+                      key={`${o.n}-${i}`}
+                      className="flex flex-col gap-3 w-[260px] shrink-0 rounded-[20px] bg-white/10 border border-white/15 px-5 py-6 backdrop-blur-sm">
                         <span className="font-display text-2xl font-semibold text-[#ff8c1a] leading-none">{o.n}</span>
                         <span className="text-[13.5px] font-medium text-white/90 leading-snug">{o.t}</span>
                       </div>
