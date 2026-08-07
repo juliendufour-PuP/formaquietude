@@ -45,7 +45,6 @@ export default function Home() {
       <ScrollProgress />
       <Navbar />
       <Hero />
-      <WaveDivider />
       <MassageCarousel onSelect={(title) => setDialog({ title, sessionId: '', kind: 'rappel' })} />
       <Curriculum
         formations={formations}

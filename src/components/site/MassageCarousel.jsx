@@ -46,7 +46,7 @@ export default function MassageCarousel({ onSelect }) {
           className="w-full h-full"
           fittingType="fill"
         />
-        <div className="absolute inset-0 bg-[#2a1f61]/55" />
+        <div className="absolute inset-0 bg-[#2a1f61]/65" />
       </div>
       <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 text-center">
         <motion.div
