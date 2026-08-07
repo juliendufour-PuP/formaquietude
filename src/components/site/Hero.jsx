@@ -89,11 +89,11 @@ export default function Hero() {
             key={s.n}
             initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: s.d }}
-            style={{ borderLeftColor: '#2a1f61', borderRightColor: '#ff6b00' }}
-            className={`absolute rounded-full ${s.pos} border-l-4 border-r-4 bg-white px-8 py-7 shadow-[0_24px_50px_-20px_rgba(42,31,97,0.75)] ring-1 ring-[#2a1f61]/10 flex flex-col items-center justify-center text-center min-w-[170px]`}>
+            style={{ borderLeftColor: '#392c6e', borderRightColor: '#f58220' }}
+            className={`absolute rounded-full ${s.pos} border-l-[6px] border-r-[6px] bg-white px-9 py-7 shadow-[0_28px_60px_-18px_rgba(42,31,97,0.7)] flex flex-col items-center justify-center text-center min-w-[180px]`}>
             
-              <p className="font-display text-3xl sm:text-4xl font-semibold text-[#ff6b00] leading-none">{s.n}</p>
-              <p className="text-[13px] font-medium text-[#2a1f61]/75 mt-2.5 leading-snug max-w-[140px]">{s.l}</p>
+              <p className="font-display text-3xl sm:text-4xl font-bold text-[#e87313] leading-none">{s.n}</p>
+              <p className="text-[13px] font-medium text-[#5d5483] mt-2.5 leading-snug max-w-[150px]">{s.l}</p>
             </motion.div>
           )}
         </motion.div>
