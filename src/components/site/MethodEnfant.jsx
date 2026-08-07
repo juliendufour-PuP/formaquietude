@@ -52,14 +52,14 @@ export default function MethodEnfant() {
 
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
               <div className="flex-1">
-                <div className="flex items-center gap-3 hidden">
-                  <span className="flex items-center justify-center w-11 h-11 rounded-full bg-[#ff6b00]/20 text-[#ff8c1a]">
-                    <Sparkles className="w-5 h-5" />
-                  </span>
-                  <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff8c1a]">
-                    Les objectifs de la formation
-                  </p>
-                </div>
+                
+
+
+
+
+
+
+                
                 <h3 className="mt-5 font-display text-[1.7rem] sm:text-[2.1rem] leading-tight font-semibold text-white text-balance">
                   Ce que vous maîtriserez à l'issue de la formation
                 </h3>
