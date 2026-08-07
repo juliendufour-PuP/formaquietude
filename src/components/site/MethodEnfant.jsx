@@ -39,51 +39,38 @@ export default function MethodEnfant() {
             alt="Enfants qui jouent dans une salle de jeu"
             className="w-full h-full"
             fittingType="fill" />
-          
         </div>
 
-        <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-[26px] bg-[#3b3a8c]/35 border border-white/15 p-8 sm:p-10 backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)]">
+        <div className="relative backdrop-blur-md bg-[#2a1f61]/40 border-y border-white/15 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)]">
+          <div className="mx-auto max-w-[1400px] px-5 sm:px-8 pt-12 lg:pt-16">
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="text-center">
+              <h3 className="font-display text-[1.7rem] sm:text-[2.1rem] leading-tight font-semibold text-white text-balance">
+                Ce que vous maîtriserez à l'issue de la formation
+              </h3>
+              <p className="mt-4 text-[15px] leading-relaxed text-white/75 max-w-2xl mx-auto">
+                Cinq objectifs clairs, de l'acquisition des bases théoriques à l'adaptation de votre pratique
+                face aux problématiques rencontrées auprès de chaque enfant.
+              </p>
+            </motion.div>
+          </div>
 
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
-              <div className="flex-1">
-                
-
-
-
-
-
-
-                
-                <h3 className="mt-5 font-display text-[1.7rem] sm:text-[2.1rem] leading-tight font-semibold text-white text-balance">
-                  Ce que vous maîtriserez à l'issue de la formation
-                </h3>
-                <p className="mt-4 text-[15px] leading-relaxed text-white/75 max-w-2xl">
-                  Cinq objectifs clairs, de l'acquisition des bases théoriques à l'adaptation de votre pratique
-                  face aux problématiques rencontrées auprès de chaque enfant.
-                </p>
-              </div>
-              <div className="w-full lg:max-w-[55%]">
-                <div className="marquee-wrap relative overflow-hidden">
-                  <div className="marquee-track flex gap-4 w-max">
-                    {[...objectives, ...objectives].map((o, i) =>
-                    <div
-                      key={`${o.n}-${i}`}
-                      className="flex flex-col gap-3 w-[260px] shrink-0 rounded-[20px] bg-white/10 border border-white/15 px-5 py-6 backdrop-blur-sm">
-                        <span className="font-display text-2xl font-semibold text-[#ff8c1a] leading-none">{o.n}</span>
-                        <span className="text-[13.5px] font-medium text-white/90 leading-snug">{o.t}</span>
-                      </div>
-                    )}
-                  </div>
+          <div className="marquee-wrap relative overflow-hidden mt-10 pb-12 lg:pb-16">
+            <div className="marquee-track flex gap-4 w-max">
+              {[...objectives, ...objectives].map((o, i) =>
+                <div
+                  key={`${o.n}-${i}`}
+                  className="flex flex-col gap-3 w-[260px] shrink-0 rounded-[20px] bg-white/10 border border-white/15 px-5 py-6 backdrop-blur-sm">
+                  <span className="font-display text-2xl font-semibold text-[#ff8c1a] leading-none">{o.n}</span>
+                  <span className="text-[13.5px] font-medium text-white/90 leading-snug">{o.t}</span>
                 </div>
-              </div>
+              )}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
