@@ -23,8 +23,8 @@ export default function Enfant2Hero() {
           className="relative z-10">
 
           <div className="flex items-center gap-3 mb-6">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#ff6b00]/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#ff6b00]">
-              <Award className="w-3.5 h-3.5" /> Prix Psychologies 2024
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#ff6b00]/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#ff6b00]">RÉCOMPENS PSYCHOLOGIES 2024
+
             </span>
             <span className="rounded-full bg-[#2a1f61]/8 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#2a1f61]/70">
               Certification RS 7530
@@ -82,22 +82,22 @@ export default function Enfant2Hero() {
           </div>
 
           {[
-            { icon: Clock, n: '35 h', l: '5 jours de formation', pos: '-top-5 -right-3 sm:-right-8', d: 0.45 },
-            { icon: Users, n: '10 max', l: 'par session de formation', pos: '-bottom-6 -right-3 sm:-right-8', d: 0.6 },
-            { icon: MapPin, n: 'Grenoble', l: 'présentiel au Centre', pos: '-bottom-6 -left-3 sm:-left-8', d: 0.75 }
-          ].map((s) =>
-            <motion.div
-              key={s.n}
-              initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: s.d }}
-              className={`absolute ${s.pos} rounded-full border-l-[6px] border-r-[6px] bg-white px-7 py-6 shadow-[0_28px_60px_-18px_rgba(42,31,97,0.7)] flex flex-col items-center justify-center text-center min-w-[170px]`}
-              style={{ borderLeftColor: '#392c6e', borderRightColor: '#f58220' }}>
+          { icon: Clock, n: '35 h', l: '5 jours de formation', pos: '-top-5 -right-3 sm:-right-8', d: 0.45 },
+          { icon: Users, n: '10 max', l: 'par session de formation', pos: '-bottom-6 -right-3 sm:-right-8', d: 0.6 },
+          { icon: MapPin, n: 'Grenoble', l: 'présentiel au Centre', pos: '-bottom-6 -left-3 sm:-left-8', d: 0.75 }].
+          map((s) =>
+          <motion.div
+            key={s.n}
+            initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: s.d }}
+            className={`absolute ${s.pos} rounded-full border-l-[6px] border-r-[6px] bg-white px-7 py-6 shadow-[0_28px_60px_-18px_rgba(42,31,97,0.7)] flex flex-col items-center justify-center text-center min-w-[170px]`}
+            style={{ borderLeftColor: '#392c6e', borderRightColor: '#f58220' }}>
               <p className="font-display text-2xl sm:text-3xl font-bold text-[#e87313] leading-none">{s.n}</p>
               <p className="text-[12.5px] font-medium text-[#5d5483] mt-2 leading-snug max-w-[130px]">{s.l}</p>
             </motion.div>
           )}
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
