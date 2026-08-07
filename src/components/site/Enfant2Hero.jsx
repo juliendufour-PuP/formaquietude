@@ -90,7 +90,7 @@ export default function Enfant2Hero() {
             key={s.n}
             initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: s.d }}
-            className={`absolute ${s.pos} rounded-full border-l-[6px] border-r-[6px] bg-white px-7 py-6 shadow-[0_28px_60px_-18px_rgba(42,31,97,0.7)] flex flex-col items-center justify-center text-center min-w-[170px]`}
+            className={`absolute hidden ${s.pos} rounded-full border-l-[6px] border-r-[6px] bg-white px-7 py-6 shadow-[0_28px_60px_-18px_rgba(42,31,97,0.7)] flex flex-col items-center justify-center text-center min-w-[170px]`}
             style={{ borderLeftColor: '#392c6e', borderRightColor: '#f58220' }}>
               <p className="font-display text-2xl sm:text-3xl font-bold text-[#e87313] leading-none">{s.n}</p>
               <p className="text-[12.5px] font-medium text-[#5d5483] mt-2 leading-snug max-w-[130px]">{s.l}</p>
