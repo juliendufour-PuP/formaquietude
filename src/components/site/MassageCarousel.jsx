@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Image } from '@/components/ui/image';
 import ThreeDPhotoCarousel from '@/components/ui/3d-carousel';
 
 const img = (p) => `https://i0.wp.com/www.formaquietude.fr/wp-content/uploads/${p}?w=500&ssl=1`;
@@ -37,8 +38,17 @@ const MASSAGES = [
 
 export default function MassageCarousel({ onSelect }) {
   return (
-    <section id="massages" className="relative bg-[#2a1f61] py-12 lg:py-14 overflow-hidden">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 text-center">
+    <section id="massages" className="relative py-12 lg:py-14 overflow-hidden">
+      <div className="absolute inset-0">
+        <Image
+          src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=80"
+          alt="Ambiance spa apaisante"
+          className="w-full h-full"
+          fittingType="fill"
+        />
+        <div className="absolute inset-0 bg-[#2a1f61]/82" />
+      </div>
+      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +64,7 @@ export default function MassageCarousel({ onSelect }) {
         </motion.div>
       </div>
 
-      <div className="mt-6">
+      <div className="relative mt-6">
         <ThreeDPhotoCarousel
           cards={MASSAGES}
           onSelect={(c) => onSelect && onSelect(c.title)}

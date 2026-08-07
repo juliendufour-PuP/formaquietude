@@ -81,7 +81,7 @@ export default function Hero() {
           </div>
 
           {[
-          { n: '15 ans', l: 'd’expérience terrain', pos: '-top-5 -right-3 sm:-right-8', d: 0.45 },
+          { n: '99%', l: 'de stagiaires satisfaites', pos: '-top-5 -right-3 sm:-right-8', d: 0.45 },
           { n: '2 400+', l: 'praticiennes formées', pos: '-bottom-6 -right-3 sm:-right-8', d: 0.6 },
           { n: '8', l: 'élèves maximum par session de formation', pos: '-bottom-6 -left-3 sm:-left-8', d: 0.75 }].
           map((s) =>
