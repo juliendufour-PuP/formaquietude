@@ -22,8 +22,8 @@ export default function Hero() {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="relative z-10">
           
-          <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff6b00] mb-6">
-            Centre de formation aux métiers du bien-être
+          <p className="tracking-[0.28em] uppercase font-semibold text-[#ff6b00] mb-6 text-sm">CENTRE DE FORMATION AUX MÉTIERS DU BIEN-ÊTRE
+
           </p>
           <h1 className="font-display text-[2.7rem] sm:text-[4rem] leading-[1] font-semibold text-[#2a1f61] text-balance">Formation certifiante en massage bien-être
 
