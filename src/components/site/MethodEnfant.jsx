@@ -41,7 +41,7 @@ export default function MethodEnfant() {
             alt="Enfants qui jouent dans une salle de jeu"
             className="w-full h-full"
             fittingType="fill" />
-          <div className="absolute inset-0 bg-[#2a1f61]/82" />
+          <div className="absolute inset-0 bg-[#2a1f61]/82 hidden" />
         </div>
 
         <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8">
