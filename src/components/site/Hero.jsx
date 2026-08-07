@@ -89,7 +89,7 @@ export default function Hero() {
             key={s.n}
             initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: s.d }}
-            className={`absolute ${s.pos} rounded-[18px] border-l-4 border-[#ff6b00] bg-white px-5 py-4 shadow-[0_24px_50px_-20px_rgba(42,31,97,0.75)] ring-1 ring-[#2a1f61]/10`}>
+            className={`absolute rounded-full ${s.pos} border-l-4 border-[#ff6b00] bg-white px-5 py-4 shadow-[0_24px_50px_-20px_rgba(42,31,97,0.75)] ring-1 ring-[#2a1f61]/10`}>
             
               <p className="font-display text-2xl sm:text-3xl font-semibold text-[#ff6b00] leading-none">{s.n}</p>
               <p className="text-[11.5px] font-medium text-[#2a1f61]/75 mt-1.5 leading-snug max-w-[110px]">{s.l}</p>
