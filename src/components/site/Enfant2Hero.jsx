@@ -92,7 +92,7 @@ export default function Enfant2Hero() {
               <div className="flex flex-col items-center text-center px-2">
                 <Sparkles className="w-5 h-5 text-[#ff6b00] hidden" strokeWidth={2} />
                 <span className="mt-1 font-display text-[15px] sm:text-[16px] font-bold leading-tight text-[#2a1f61] uppercase tracking-wide">Expertise</span>
-                <span className="font-display text-[15px] sm:text-[16px] font-bold leading-tight text-[#ff6b00] uppercase tracking-wide">unique en France</span>
+                <span className="text-[15px] sm:text-[16px] font-bold leading-tight text-[#ff6b00] uppercase tracking-wide [font-family:'Cormorant_Garamond',_ui-serif,_Georgia,_serif]">UNIQUE EN FRANCE</span>
               </div>
             </div>
           </motion.div>
