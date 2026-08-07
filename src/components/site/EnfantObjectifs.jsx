@@ -75,7 +75,7 @@ export default function EnfantObjectifs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-[24px] bg-white border border-[#2a1f61]/8 p-7 sm:p-8">
+            className="rounded-[24px] bg-white border border-[#2a1f61]/8 p-7 sm:p-8 hidden">
             <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#d6722d] mb-6">
               En pratique
             </p>

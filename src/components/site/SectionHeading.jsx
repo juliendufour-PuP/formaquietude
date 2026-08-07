@@ -9,17 +9,17 @@ export default function SectionHeading({ eyebrow, title, subtitle, align = 'cent
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      className={`max-w-2xl ${alignCls}`}
-    >
-      {eyebrow && (
-        <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff6b00] mb-4">{eyebrow}</p>
-      )}
+      className={`max-w-2xl ${alignCls}`}>
+      
+      {eyebrow &&
+      <p className="tracking-[0.28em] uppercase font-semibold text-[#ff6b00] mb-4 text-sm">{eyebrow}</p>
+      }
       <h2 className={`font-display text-[2.2rem] sm:text-5xl leading-[1.05] font-semibold text-balance ${light ? 'text-white' : 'text-[#2a1f61]'}`}>
         {title}
       </h2>
-      {subtitle && (
-        <p className={`mt-5 text-[17px] leading-relaxed ${light ? 'text-white/70' : 'text-[#2a1f61]/65'}`}>{subtitle}</p>
-      )}
-    </motion.div>
-  );
+      {subtitle &&
+      <p className={`mt-5 leading-relaxed text-xl ${light ? 'text-white/70' : 'text-[#2a1f61]/65'}`}>{subtitle}</p>
+      }
+    </motion.div>);
+
 }
