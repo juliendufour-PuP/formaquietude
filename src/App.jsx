@@ -8,6 +8,7 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 import Home from '@/pages/Home';
 import RelaxationEnfant from '@/pages/RelaxationEnfant';
+import RelaxationEnfant2 from '@/pages/RelaxationEnfant2';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -37,6 +38,7 @@ const AuthenticatedApp = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/relaxation-enfant" element={<RelaxationEnfant />} />
+      <Route path="/relaxation-enfant-2" element={<RelaxationEnfant2 />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
