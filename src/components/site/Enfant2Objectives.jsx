@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import { Image } from '@/components/ui/image';
 
 const objectives = [
-  { n: '01', t: "Acquérir les bases théoriques et pratiques de la relaxation ludique adaptée à l'enfant" },
-  { n: '02', t: "Comprendre et assimiler les méthodes de relaxation ludique pour enfant, ses principes et le positionnement professionnel" },
-  { n: '03', t: "Maîtriser les différents supports, jeux et ateliers pour animer une séance de relaxation ludique pour enfant" },
-  { n: '04', t: "Utiliser les techniques enseignées pour les enfants, mais également pour soi-même" },
-  { n: '05', t: "Adapter sa pratique en fonction des problématiques rencontrées" }
-];
+{ n: '01', t: "Acquérir les bases théoriques et pratiques de la relaxation ludique adaptée à l'enfant" },
+{ n: '02', t: "Comprendre et assimiler les méthodes de relaxation ludique pour enfant, ses principes et le positionnement professionnel" },
+{ n: '03', t: "Maîtriser les différents supports, jeux et ateliers pour animer une séance de relaxation ludique pour enfant" },
+{ n: '04', t: "Utiliser les techniques enseignées pour les enfants, mais également pour soi-même" },
+{ n: '05', t: "Adapter sa pratique en fonction des problématiques rencontrées" }];
+
 
 export default function Enfant2Objectives() {
   return (
@@ -21,7 +21,7 @@ export default function Enfant2Objectives() {
           fittingType="fill" />
       </div>
 
-      <div className="relative backdrop-blur-md bg-[#2a1f61]/40 border-y border-white/15 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)] py-16 lg:py-20">
+      <div className="relative backdrop-blur-md bg-[#2a1f61]/40 border-y border-white/15 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)] py-16 lg:py-20 hidden">
         <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
@@ -40,13 +40,13 @@ export default function Enfant2Objectives() {
 
           <div className="mt-12 flex flex-wrap justify-center gap-5">
             {objectives.map((o, i) =>
-              <motion.div
-                key={o.n}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="flex flex-col gap-3 w-[260px] shrink-0 rounded-[20px] bg-white/10 border border-white/15 px-6 py-7 backdrop-blur-sm">
+            <motion.div
+              key={o.n}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-col gap-3 w-[260px] shrink-0 rounded-[20px] bg-white/10 border border-white/15 px-6 py-7 backdrop-blur-sm">
                 <span className="font-display text-2xl font-semibold text-[#ff8c1a] leading-none">{o.n}</span>
                 <span className="text-[13.5px] font-medium text-white/90 leading-snug">{o.t}</span>
               </motion.div>
@@ -54,6 +54,6 @@ export default function Enfant2Objectives() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
