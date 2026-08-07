@@ -70,15 +70,21 @@ export default function MethodEnfant() {
                   Vous exercez un autre métier auprès de l’enfant&nbsp;? Contactez-nous pour vérifier votre éligibilité.
                 </p>
               </div>
-              <div className="flex flex-wrap gap-2 lg:max-w-[42%] lg:justify-end">
-                {audience.map((p) =>
-                <span
-                  key={p.label}
-                  className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3.5 py-1.5 text-[13px] font-medium text-white/85">
-                    <p.icon className="w-4 h-4 text-[#ff8c1a]" />
-                    {p.label}
-                  </span>
-                )}
+              <div className="w-full lg:max-w-[55%]">
+                <div className="marquee-wrap relative overflow-hidden">
+                  <div className="marquee-track flex gap-4 w-max">
+                    {[...audience, ...audience].map((p, i) =>
+                      <div
+                        key={`${p.label}-${i}`}
+                        className="flex flex-col items-center justify-center gap-3 w-[150px] shrink-0 rounded-[20px] bg-white/10 border border-white/15 px-4 py-6 backdrop-blur-sm">
+                        <span className="flex items-center justify-center w-12 h-12 rounded-full bg-[#ff6b00]/20 text-[#ff8c1a]">
+                          <p.icon className="w-6 h-6" />
+                        </span>
+                        <span className="text-[13px] font-semibold text-white/90 text-center leading-snug">{p.label}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
