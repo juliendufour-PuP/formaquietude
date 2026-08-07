@@ -4,23 +4,23 @@ import { Target, MapPin, Clock, Euro, ThumbsUp, Smile, Sparkles, Check } from 'l
 import SectionHeading from './SectionHeading';
 
 const objectives = [
-  'Acquérir les bases théoriques et pratiques de la relaxation ludique adaptée à l’enfant',
-  'Comprendre et assimiler les méthodes de relaxation ludique pour enfant, ses principes et le positionnement professionnel',
-  'Maîtriser les différents supports, jeux et ateliers pour animer une séance de relaxation ludique pour enfant',
-  'Utiliser les techniques enseignées pour les enfants, mais également pour soi-même',
-  'Adapter sa pratique en fonction des problématiques rencontrées',
-];
+'Acquérir les bases théoriques et pratiques de la relaxation ludique adaptée à l’enfant',
+'Comprendre et assimiler les méthodes de relaxation ludique pour enfant, ses principes et le positionnement professionnel',
+'Maîtriser les différents supports, jeux et ateliers pour animer une séance de relaxation ludique pour enfant',
+'Utiliser les techniques enseignées pour les enfants, mais également pour soi-même',
+'Adapter sa pratique en fonction des problématiques rencontrées'];
+
 
 const stats = [
-  { icon: ThumbsUp, value: '100 %', label: 'des stagiaires recommandent les formations' },
-  { icon: Smile, value: '100 %', label: 'des stagiaires globalement satisfaits' },
-];
+{ icon: ThumbsUp, value: '100 %', label: 'des stagiaires recommandent les formations' },
+{ icon: Smile, value: '100 %', label: 'des stagiaires globalement satisfaits' }];
+
 
 const practical = [
-  { icon: Clock, label: '35 h en présentiel' },
-  { icon: MapPin, label: 'Grenoble — au Centre' },
-  { icon: Euro, label: '990 € net de taxe' },
-];
+{ icon: Clock, label: '35 h en présentiel' },
+{ icon: MapPin, label: 'Grenoble — au Centre' },
+{ icon: Euro, label: '990 € net de taxe' }];
+
 
 export default function EnfantObjectifs() {
   return (
@@ -51,20 +51,20 @@ export default function EnfantObjectifs() {
           </div>
 
           <ol className="relative grid sm:grid-cols-2 gap-x-10 gap-y-6">
-            {objectives.map((o, i) => (
-              <motion.li
-                key={o}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.5, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
-                className="flex items-start gap-4 pb-6 border-b border-white/10">
+            {objectives.map((o, i) =>
+            <motion.li
+              key={o}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
+              className="flex items-start gap-4 pb-6 border-b border-white/10">
                 <span className="shrink-0 font-display text-[1.6rem] font-semibold leading-none text-[#ff6b00]">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <p className="text-[15px] leading-relaxed text-white/85 pt-1">{o}</p>
               </motion.li>
-            ))}
+            )}
           </ol>
         </motion.div>
 
@@ -80,33 +80,33 @@ export default function EnfantObjectifs() {
               En pratique
             </p>
             <div className="grid sm:grid-cols-3 gap-5">
-              {practical.map((p) => (
-                <div key={p.label} className="flex items-start gap-3">
+              {practical.map((p) =>
+              <div key={p.label} className="flex items-start gap-3">
                   <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#2a1f61]/8 text-[#2a1f61] shrink-0">
                     <p.icon className="w-5 h-5" strokeWidth={2} />
                   </span>
                   <p className="text-[14px] font-medium leading-snug text-[#232049] pt-1.5">{p.label}</p>
                 </div>
-              ))}
+              )}
             </div>
           </motion.div>
 
           <div className="grid grid-cols-2 gap-4">
-            {stats.map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.6, delay: 0.1 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="rounded-[22px] bg-[#f5eee9] border border-[#2a1f61]/8 p-5 flex flex-col">
+            {stats.map((s, i) =>
+            <motion.div
+              key={s.label}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, delay: 0.1 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="rounded-[22px] bg-[#f5eee9] border border-[#2a1f61]/8 p-5 flex flex-col hidden">
                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#ff6b00]/12 text-[#ff6b00] mb-3">
                   <s.icon className="w-5 h-5" />
                 </span>
                 <p className="font-display text-[2rem] font-semibold leading-none text-[#2a1f61]">{s.value}</p>
                 <p className="mt-2 text-[11.5px] leading-snug text-[#232049]/65">{s.label}</p>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
 
@@ -116,7 +116,7 @@ export default function EnfantObjectifs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 flex items-center justify-center gap-3 rounded-[18px] bg-[#ff6b00]/8 border border-[#ff6b00]/15 px-5 py-4">
+          className="mt-6 flex items-center justify-center gap-3 rounded-[18px] bg-[#ff6b00]/8 border border-[#ff6b00]/15 px-5 py-4 hidden">
           <Sparkles className="w-5 h-5 text-[#ff6b00] shrink-0" />
           <p className="text-[13px] leading-snug text-[#232049]">
             <span className="font-semibold">Nominée au Prix Psychologies 2024</span> — catégorie Mieux-Être
@@ -124,6 +124,6 @@ export default function EnfantObjectifs() {
           <Check className="w-4 h-4 text-[#a3b18a] shrink-0" />
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
