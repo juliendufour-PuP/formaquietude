@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { base44 } from '@/api/base44Client';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import ScrollProgress from '@/components/site/ScrollProgress';
 import Navbar from '@/components/site/Navbar';
-import HeroEnfant from '@/components/site/HeroEnfant';
-import EnfantFormations from '@/components/site/EnfantFormations';
+import Enfant2Hero from '@/components/site/Enfant2Hero';
+import Enfant2Programme from '@/components/site/Enfant2Programme';
+import Enfant2Practical from '@/components/site/Enfant2Practical';
 import MethodEnfant from '@/components/site/MethodEnfant';
-import EnfantObjectifs from '@/components/site/EnfantObjectifs';
 import ProofTicker from '@/components/site/ProofTicker';
 import Faq from '@/components/site/Faq';
 import ContactSection from '@/components/site/ContactSection';
@@ -13,10 +14,10 @@ import WaveDivider from '@/components/site/WaveDivider';
 import LeadForm from '@/components/site/LeadForm';
 
 const TITLES = [
-  'Accompagner le développement du jeune enfant — Bloc 1 CAP AEPE',
-  'Massage enfant',
   'Praticien en relaxation ludique pour enfants',
+  'Massage enfant',
   'Relaxation ludique pour enfants en situation de handicap',
+  'Accompagner le développement du jeune enfant — Bloc 1 CAP AEPE',
   'Intégrer la relaxation ludique dans ses pratiques éducatives',
 ];
 
@@ -25,17 +26,17 @@ export default function RelaxationEnfant2() {
   const [dialog, setDialog] = useState(null);
 
   useEffect(() => {
-    // No-op: testimonials fetched on main page
+    base44.entities.Testimonial.list().then(setTestimonials).catch(() => {});
   }, []);
 
   return (
     <div className="bg-white">
       <ScrollProgress />
       <Navbar />
-      <HeroEnfant />
-      <EnfantFormations onSelect={(title) => setDialog({ title, kind: 'rappel' })} />
+      <Enfant2Hero />
       <MethodEnfant />
-      <EnfantObjectifs />
+      <Enfant2Programme />
+      <Enfant2Practical />
       <ProofTicker testimonials={testimonials} />
       <Faq />
       <WaveDivider />
