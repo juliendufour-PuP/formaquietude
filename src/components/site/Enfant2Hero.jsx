@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Award, Users, Clock, MapPin } from 'lucide-react';
+import { ArrowDown, Award, Users, Clock, MapPin, Sparkles } from 'lucide-react';
 import { Image } from '@/components/ui/image';
 import MagneticButton from './MagneticButton';
 import BookingBackdrop from './BookingBackdrop';
@@ -81,21 +81,21 @@ export default function Enfant2Hero() {
               fittingType="fill" />
           </div>
 
-          {[
-          { icon: Clock, n: '35 h', l: '5 jours de formation', pos: '-top-5 -right-3 sm:-right-8', d: 0.45 },
-          { icon: Users, n: '10 max', l: 'par session de formation', pos: '-bottom-6 -right-3 sm:-right-8', d: 0.6 },
-          { icon: MapPin, n: 'Grenoble', l: 'présentiel au Centre', pos: '-bottom-6 -left-3 sm:-left-8', d: 0.75 }].
-          map((s) => null
-
-
-
-
-
-
-
-
-
-          )}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7, rotate: -12 }}
+            animate={{ opacity: 1, scale: 1, rotate: -6 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute -bottom-8 -right-4 sm:-right-6 z-20">
+            <div className="relative w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] rounded-full flex items-center justify-center bg-white shadow-[0_20px_50px_-20px_rgba(42,31,97,0.45)]">
+              <div className="absolute inset-0 rounded-full border-[3px] border-[#ff6b00]" />
+              <div className="absolute inset-[6px] rounded-full border-[3px] border-[#2a1f61]" />
+              <div className="flex flex-col items-center text-center px-2">
+                <Sparkles className="w-5 h-5 text-[#ff6b00]" strokeWidth={2} />
+                <span className="mt-1 font-display text-[15px] sm:text-[16px] font-bold leading-tight text-[#2a1f61] uppercase tracking-wide">Expertise</span>
+                <span className="font-display text-[15px] sm:text-[16px] font-bold leading-tight text-[#ff6b00] uppercase tracking-wide">unique en France</span>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>);
