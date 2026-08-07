@@ -4,6 +4,7 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import ScrollProgress from '@/components/site/ScrollProgress';
 import Navbar from '@/components/site/Navbar';
 import Enfant2Hero from '@/components/site/Enfant2Hero';
+import InfoBanner from '@/components/site/InfoBanner';
 import Enfant2Programme from '@/components/site/Enfant2Programme';
 import Enfant2Objectives from '@/components/site/Enfant2Objectives';
 import Enfant2Pricing from '@/components/site/Enfant2Pricing';
@@ -35,6 +36,7 @@ export default function RelaxationEnfant2() {
       <ScrollProgress />
       <Navbar />
       <Enfant2Hero />
+      <InfoBanner />
       <Enfant2Programme />
       <Enfant2Objectives />
       <Enfant2Pricing onSelect={(title) => setDialog({ title, kind: 'rappel' })} />
