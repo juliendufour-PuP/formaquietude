@@ -23,7 +23,7 @@ export default function Enfant2Hero() {
           className="relative z-10">
 
           <div className="flex items-center gap-3 mb-6">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#ff6b00]/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#ff6b00]">NOMMINÉ PSYCHOLOGIES 2024
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#ff6b00]/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#ff6b00]">RÉCOMPENSÉ PRIX PSYCHOLOGIES 2024
 
             </span>
             <span className="rounded-full bg-[#2a1f61]/8 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#2a1f61]/70">
