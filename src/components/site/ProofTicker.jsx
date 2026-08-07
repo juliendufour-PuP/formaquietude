@@ -9,7 +9,8 @@ export default function ProofTicker({ testimonials }) {
       <BookingBackdrop baseColor="#ff6b00" gradientColors={['#2a1f61', '#2a1f61', '#ff6b00']} opacityClass="opacity-40" top="calc(72% + 30px)" reverse />
       <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
         <div>
-          <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff6b00] mb-4">Elles ont osé la reconversion</p>
+          <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff6b00] mb-4">ILS NOUS ONT FAIT CONFIANCE
+</p>
           <h2 className="font-display text-[2.2rem] sm:text-5xl font-semibold text-[#2a1f61] leading-[1.05]">
             2 400 praticiennes formées,<br />4,9 / 5 de satisfaction
           </h2>
@@ -22,8 +23,7 @@ export default function ProofTicker({ testimonials }) {
 
       <div className="marquee-wrap relative w-screen" style={{ zIndex: 1 }}>
         <div className="marquee-track flex gap-6 w-max">
-          {loop.map((t, i) => (
-            <figure key={`${t.id}-${i}`} className="w-[360px] shrink-0 rounded-[22px] bg-[#f4f4f9] p-7">
+          {loop.map((t, i) => <figure key={`${t.id}-${i}`} className="w-[360px] shrink-0 rounded-[22px] bg-[#f4f4f9] p-7">
               <Quote className="w-7 h-7 text-[#ff6b00]/50" />
               <blockquote className="mt-4 text-[15.5px] leading-relaxed text-[#2a1f61]/80">« {t.quote} »</blockquote>
               <figcaption className="mt-5 pt-4 border-t border-[#2a1f61]/10">
@@ -31,9 +31,9 @@ export default function ProofTicker({ testimonials }) {
                 <p className="text-[12.5px] text-[#2a1f61]/55">{t.role}</p>
               </figcaption>
             </figure>
-          ))}
+          )}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
