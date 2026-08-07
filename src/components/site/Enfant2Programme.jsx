@@ -118,16 +118,19 @@ export default function Enfant2Programme() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="rounded-[22px] border border-[#2a1f61]/10 bg-white p-8 shadow-[0_20px_50px_-30px_rgba(42,31,97,0.4)]">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-full bg-[#ff6b00]/10 text-[#ff6b00]">
+                className="relative overflow-hidden rounded-[22px] border border-[#2a1f61]/10 border-l-4 border-l-[#ff6b00] bg-white p-8 shadow-[0_20px_50px_-30px_rgba(42,31,97,0.4)]">
+                <span className="pointer-events-none absolute bottom-2 right-4 font-display text-[5.5rem] font-bold leading-none text-[#2a1f61]/[0.06] select-none">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <div className="relative flex items-center gap-4 mb-6">
+                  <span className="flex items-center justify-center w-12 h-12 rounded-full bg-[#2a1f61] text-white shrink-0">
                     <m.icon className="w-6 h-6" />
                   </span>
                   <span className="font-display text-[1.3rem] font-semibold text-[#2a1f61] leading-snug">
                     {m.title}
                   </span>
                 </div>
-                <ul className="space-y-3">
+                <ul className="relative space-y-3">
                   {m.items.map((item, j) =>
                     <li key={j} className="flex items-start gap-3 text-[14.5px] leading-relaxed text-[#2a1f61]/70">
                       <span className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ff6b00]" />
