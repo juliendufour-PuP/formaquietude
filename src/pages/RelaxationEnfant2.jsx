@@ -5,6 +5,7 @@ import ScrollProgress from '@/components/site/ScrollProgress';
 import Navbar from '@/components/site/Navbar';
 import Enfant2Hero from '@/components/site/Enfant2Hero';
 import Enfant2Programme from '@/components/site/Enfant2Programme';
+import Enfant2Pricing from '@/components/site/Enfant2Pricing';
 import Enfant2Practical from '@/components/site/Enfant2Practical';
 import MethodEnfant from '@/components/site/MethodEnfant';
 import ProofTicker from '@/components/site/ProofTicker';
@@ -36,6 +37,7 @@ export default function RelaxationEnfant2() {
       <Enfant2Hero />
       <MethodEnfant />
       <Enfant2Programme />
+      <Enfant2Pricing onSelect={(title) => setDialog({ title, kind: 'rappel' })} />
       <Enfant2Practical />
       <ProofTicker testimonials={testimonials} />
       <Faq />
