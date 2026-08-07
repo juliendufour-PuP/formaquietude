@@ -70,26 +70,26 @@ export default function EnfantObjectifs() {
 
         {/* Barre inférieure — pratique + stats + badge */}
         <div className="mt-6 grid lg:grid-cols-[1.4fr_1fr] gap-6">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-[24px] bg-white border border-[#2a1f61]/8 p-7 sm:p-8 hidden">
-            <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#d6722d] mb-6">
-              En pratique
-            </p>
-            <div className="grid sm:grid-cols-3 gap-5">
-              {practical.map((p) =>
-              <div key={p.label} className="flex items-start gap-3">
-                  <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#2a1f61]/8 text-[#2a1f61] shrink-0">
-                    <p.icon className="w-5 h-5" strokeWidth={2} />
-                  </span>
-                  <p className="text-[14px] font-medium leading-snug text-[#232049] pt-1.5">{p.label}</p>
-                </div>
-              )}
-            </div>
-          </motion.div>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
 
           <div className="grid grid-cols-2 gap-4">
             {stats.map((s, i) =>
@@ -111,18 +111,18 @@ export default function EnfantObjectifs() {
         </div>
 
         {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 flex items-center justify-center gap-3 rounded-[18px] bg-[#ff6b00]/8 border border-[#ff6b00]/15 px-5 py-4 hidden">
-          <Sparkles className="w-5 h-5 text-[#ff6b00] shrink-0" />
-          <p className="text-[13px] leading-snug text-[#232049]">
-            <span className="font-semibold">Nominée au Prix Psychologies 2024</span> — catégorie Mieux-Être
-          </p>
-          <Check className="w-4 h-4 text-[#a3b18a] shrink-0" />
-        </motion.div>
+        
+
+
+
+
+
+
+
+
+
+
+        
       </div>
     </section>);
 
