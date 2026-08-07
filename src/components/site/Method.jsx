@@ -7,7 +7,7 @@ const steps = [
 { n: '01', t: 'Entretien pédagogique', d: 'Un échange téléphonique de 20 minutes pour définir votre projet, votre niveau et le cursus adapté.' },
 { n: '02', t: 'Montage du financement', d: "Nous constituons ensemble votre dossier CPF ou entreprise." },
 { n: '03', t: 'Immersion en petit groupe', d: '8 élèves maximum, 80 % de pratique sur table, corrections posturales individuelles à chaque manœuvre.' },
-{ n: '04', t: 'Installation & suivi', d: 'Statut, tarifs, hygiène, premiers clients : 6 mois d’accompagnement après votre attestation.' }];
+{ n: '04', t: 'Installation & suivi', d: "Statut, tarifs, hygi\xE8ne, suivi d'insertion professionnel\n" }];
 
 
 export default function Method() {
