@@ -50,7 +50,7 @@ export default function EnfantObjectifs() {
             </p>
           </div>
 
-          <ol className="relative grid sm:grid-cols-2 gap-x-10 gap-y-6">
+          <ol className="relative flex flex-col gap-6">
             {objectives.map((o, i) =>
             <motion.li
               key={o}
