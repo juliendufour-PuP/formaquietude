@@ -79,10 +79,10 @@ export default function Pricing({ onSelect }) {
 
               <div className="mt-7 flex flex-col items-center gap-1 text-center">
                 <div className="flex items-end justify-center gap-2">
-                  <span className={`font-display text-5xl font-semibold ${p.featured ? 'text-white' : 'text-[#2a1f61]'}`}>{p.price}</span>
+                  <span className={`font-display font-semibold text-6xl ${p.featured ? 'text-white' : 'text-[#2a1f61]'}`}>{p.price}</span>
                   <span className={`mb-2 text-[13px] ${p.featured ? 'text-white/60' : 'text-[#2a1f61]/50'}`}>TTC</span>
                 </div>
-                <p className={`font-medium text-sm ${p.featured ? 'text-white/70' : 'text-[#ff6b00]'}`}>Paiement possible en 3, 4 ou 10 fois</p>
+                <p className={`font-medium text-base ${p.featured ? 'text-white/70' : 'text-[#ff6b00]'}`}>Paiement possible en 3, 4 ou 10 fois</p>
               </div>
 
               <button
