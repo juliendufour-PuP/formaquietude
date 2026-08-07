@@ -1,16 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  BookOpen,
-  GraduationCap,
-  Wind,
-  Brain,
-  Baby,
-  HeartHandshake,
-  Sun,
-  Backpack,
-  Sparkles } from
-'lucide-react';
 import { Image } from '@/components/ui/image';
 import SectionHeading from './SectionHeading';
 
@@ -18,103 +7,51 @@ const steps = [
 { n: '01', t: 'Entretien pédagogique', d: 'Un échange de 20 minutes pour valider votre expérience auprès des enfants et définir le cursus adapté à votre métier.' },
 { n: '02', t: 'Montage du financement', d: 'Nous constituons ensemble votre dossier CPF ou entreprise. Aucune avance de frais dans la majorité des cas.' },
 { n: '03', t: 'Immersion en petit groupe', d: '10 élèves maximum, pratique encadrée d’attitudes et de gestes de relaxation adaptés à l’enfant, en présentiel à Grenoble.' },
-{ n: '04', t: 'Mise en pratique & suivi', d: 'Concevoir et animer des séances adaptées à chaque enfant, y compris en situation de handicap — suivi post-formation inclus.' }];
-
-
-const objectives = [
-{ n: '01', t: "Acquérir les bases théoriques et pratiques de la relaxation ludique adaptée à l'enfant" },
-{ n: '02', t: "Comprendre et assimiler les méthodes de relaxation ludique pour enfant, ses principes et le positionnement professionnel" },
-{ n: '03', t: "Maîtriser les différents supports, jeux et ateliers pour animer une séance de relaxation ludique pour enfant" },
-{ n: '04', t: "Utiliser les techniques enseignées pour les enfants, mais également pour soi-même" },
-{ n: '05', t: "Adapter sa pratique en fonction des problématiques rencontrées" }];
-
+{ n: '04', t: 'Mise en pratique & suivi', d: 'Concevoir et animer des séances adaptées à chaque enfant, y compris en situation de handicap — suivi post-formation inclus.' }
+];
 
 export default function MethodEnfant() {
   return (
-    <>
-      <section className="relative bg-[#2a1f61] py-16 lg:py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/06fede28f_generated_image.png"
-            alt="Enfants qui jouent dans une salle de jeu"
-            className="w-full h-full"
-            fittingType="fill" />
-        </div>
+    <section id="methode" className="bg-white py-24 lg:py-32">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+        <SectionHeading
+          eyebrow="La méthode Formaquiétude"
+          title="Une méthode pensée pour les professionnelles du jeune enfant"
+          subtitle="Un parcours en quatre temps, pour concevoir et animer des séances de relaxation adaptées à chaque enfant." />
 
-        <div className="relative backdrop-blur-md bg-[#2a1f61]/40 border-y border-white/15 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12)]">
-          <div className="mx-auto max-w-[1400px] px-5 sm:px-8 pt-12 lg:pt-16">
-            <motion.div
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
+        <div className="mt-16 grid lg:grid-cols-[1fr_1fr] gap-14 items-center">
+          <div className="relative">
+            <div className="overflow-hidden rounded-[24px]">
+              <Image
+                src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/c2b944d4e_generated_image.png"
+                alt="Praticienne accompagnant un enfant dans un exercice de relaxation"
+                className="w-full h-[420px] lg:h-[540px]"
+                fittingType="fill" />
+            </div>
+            <div className="absolute -bottom-6 -right-4 sm:right-6 rounded-[20px] bg-[#ff6b00] px-7 py-5 text-white shadow-[0_24px_50px_-22px_rgba(255,107,0,0.8)]">
+              <p className="font-display text-4xl font-semibold leading-none">RS 7530</p>
+              <p className="text-[12.5px] mt-1 opacity-90 max-w-[150px] leading-snug">certification enregistrée par France Compétences</p>
+            </div>
+          </div>
+
+          <ol className="space-y-9">
+            {steps.map((s, i) =>
+            <motion.li
+              key={s.n}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="text-center">
-              <h3 className="font-display text-[1.7rem] sm:text-[2.1rem] leading-tight font-semibold text-white text-balance">
-                Ce que vous maîtriserez à l'issue de la formation
-              </h3>
-              <p className="mt-4 text-[15px] leading-relaxed text-white/75 max-w-2xl mx-auto">
-                Cinq objectifs clairs, de l'acquisition des bases théoriques à l'adaptation de votre pratique
-                face aux problématiques rencontrées auprès de chaque enfant.
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="marquee-wrap relative overflow-hidden mt-10 pb-12 lg:pb-16">
-            <div className="marquee-track flex gap-4 w-max">
-              {[...objectives, ...objectives].map((o, i) =>
-                <div
-                  key={`${o.n}-${i}`}
-                  className="flex flex-col gap-3 w-[260px] shrink-0 rounded-[20px] bg-white/10 border border-white/15 px-5 py-6 backdrop-blur-sm">
-                  <span className="font-display text-2xl font-semibold text-[#ff8c1a] leading-none">{o.n}</span>
-                  <span className="text-[13.5px] font-medium text-white/90 leading-snug">{o.t}</span>
-                </div>
-              )}
-            </div>
-          </div>
+              transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="relative pl-16">
+                <span className="absolute left-0 top-0 font-display text-3xl font-semibold text-[#ff6b00]">{s.n}</span>
+                <span className="absolute left-[22px] top-11 bottom-[-24px] w-px bg-gradient-to-b from-[#ff6b00]/40 to-transparent last:hidden" />
+                <h3 className="font-display text-2xl font-semibold text-[#2a1f61]">{s.t}</h3>
+                <p className="mt-2 text-[16px] leading-relaxed text-[#2a1f61]/65">{s.d}</p>
+              </motion.li>
+            )}
+          </ol>
         </div>
-      </section>
-
-      <section id="methode" className="bg-white py-24 lg:py-32">
-        <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
-          <SectionHeading
-            eyebrow="La méthode Formaquiétude"
-            title="Une méthode pensée pour les professionnelles du jeune enfant"
-            subtitle="Un parcours en quatre temps, pour concevoir et animer des séances de relaxation adaptées à chaque enfant." />
-
-          <div className="mt-16 grid lg:grid-cols-[1fr_1fr] gap-14 items-center">
-            <div className="relative">
-              <div className="overflow-hidden rounded-[24px]">
-                <Image
-                  src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/c2b944d4e_generated_image.png"
-                  alt="Praticienne accompagnant un enfant dans un exercice de relaxation"
-                  className="w-full h-[420px] lg:h-[540px]"
-                  fittingType="fill" />
-              </div>
-              <div className="absolute -bottom-6 -right-4 sm:right-6 rounded-[20px] bg-[#ff6b00] px-7 py-5 text-white shadow-[0_24px_50px_-22px_rgba(255,107,0,0.8)]">
-                <p className="font-display text-4xl font-semibold leading-none">RS 7530</p>
-                <p className="text-[12.5px] mt-1 opacity-90 max-w-[150px] leading-snug">certification enregistrée par France Compétences</p>
-              </div>
-            </div>
-
-            <ol className="space-y-9">
-              {steps.map((s, i) =>
-              <motion.li
-                key={s.n}
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="relative pl-16">
-                  <span className="absolute left-0 top-0 font-display text-3xl font-semibold text-[#ff6b00]">{s.n}</span>
-                  <span className="absolute left-[22px] top-11 bottom-[-24px] w-px bg-gradient-to-b from-[#ff6b00]/40 to-transparent last:hidden" />
-                  <h3 className="font-display text-2xl font-semibold text-[#2a1f61]">{s.t}</h3>
-                  <p className="mt-2 text-[16px] leading-relaxed text-[#2a1f61]/65">{s.d}</p>
-                </motion.li>
-              )}
-            </ol>
-          </div>
-        </div>
-      </section>
-    </>);
-
+      </div>
+    </section>
+  );
 }
