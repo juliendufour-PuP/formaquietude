@@ -8,7 +8,8 @@ import {
   Baby,
   HeartHandshake,
   Sun,
-  Backpack } from
+  Backpack,
+  Sparkles } from
 'lucide-react';
 import { Image } from '@/components/ui/image';
 import SectionHeading from './SectionHeading';
@@ -20,15 +21,12 @@ const steps = [
 { n: '04', t: 'Mise en pratique & suivi', d: 'Concevoir et animer des séances adaptées à chaque enfant, y compris en situation de handicap — suivi post-formation inclus.' }];
 
 
-const audience = [
-{ icon: BookOpen, label: 'Instituteur / institutrice' },
-{ icon: GraduationCap, label: 'Professeur des écoles' },
-{ icon: Wind, label: 'Sophrogogue' },
-{ icon: Brain, label: 'Psychothérapeute pour enfant' },
-{ icon: Baby, label: 'Auxiliaire de puériculture' },
-{ icon: HeartHandshake, label: 'Éducateur spécialisé' },
-{ icon: Sun, label: 'Animateur petite enfance' },
-{ icon: Backpack, label: 'ATSEM' }];
+const objectives = [
+{ n: '01', t: "Acquérir les bases théoriques et pratiques de la relaxation ludique adaptée à l'enfant" },
+{ n: '02', t: "Comprendre et assimiler les méthodes de relaxation ludique pour enfant, ses principes et le positionnement professionnel" },
+{ n: '03', t: "Maîtriser les différents supports, jeux et ateliers pour animer une séance de relaxation ludique pour enfant" },
+{ n: '04', t: "Utiliser les techniques enseignées pour les enfants, mais également pour soi-même" },
+{ n: '05', t: "Adapter sa pratique en fonction des problématiques rencontrées" }];
 
 
 export default function MethodEnfant() {
@@ -54,33 +52,31 @@ export default function MethodEnfant() {
 
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
               <div className="flex-1">
-                
-
-
-
-
-
-
-                
+                <div className="flex items-center gap-3">
+                  <span className="flex items-center justify-center w-11 h-11 rounded-full bg-[#ff6b00]/20 text-[#ff8c1a]">
+                    <Sparkles className="w-5 h-5" />
+                  </span>
+                  <p className="text-[11px] tracking-[0.28em] uppercase font-semibold text-[#ff8c1a]">
+                    Les objectifs de la formation
+                  </p>
+                </div>
                 <h3 className="mt-5 font-display text-[1.7rem] sm:text-[2.1rem] leading-tight font-semibold text-white text-balance">
-                  Un parcours réservé aux professionnelles qui accompagnent déjà les enfants
+                  Ce que vous maîtriserez à l'issue de la formation
                 </h3>
                 <p className="mt-4 text-[15px] leading-relaxed text-white/75 max-w-2xl">
-                  Ces cursus s’adressent aux personnes qui travaillent déjà auprès des enfants dans un cadre professionnel.
-                  Vous exercez un autre métier auprès de l’enfant&nbsp;? Contactez-nous pour vérifier votre éligibilité.
+                  Cinq objectifs clairs, de l'acquisition des bases théoriques à l'adaptation de votre pratique
+                  face aux problématiques rencontrées auprès de chaque enfant.
                 </p>
               </div>
               <div className="w-full lg:max-w-[55%]">
                 <div className="marquee-wrap relative overflow-hidden">
                   <div className="marquee-track flex gap-4 w-max">
-                    {[...audience, ...audience].map((p, i) =>
+                    {[...objectives, ...objectives].map((o, i) =>
                       <div
-                        key={`${p.label}-${i}`}
-                        className="flex flex-col items-center justify-center gap-3 w-[150px] shrink-0 rounded-[20px] bg-white/10 border border-white/15 px-4 py-6 backdrop-blur-sm">
-                        <span className="flex items-center justify-center w-12 h-12 rounded-full bg-[#ff6b00]/20 text-[#ff8c1a]">
-                          <p.icon className="w-6 h-6" />
-                        </span>
-                        <span className="text-[13px] font-semibold text-white/90 text-center leading-snug">{p.label}</span>
+                        key={`${o.n}-${i}`}
+                        className="flex flex-col gap-3 w-[260px] shrink-0 rounded-[20px] bg-white/10 border border-white/15 px-5 py-6 backdrop-blur-sm">
+                        <span className="font-display text-2xl font-semibold text-[#ff8c1a] leading-none">{o.n}</span>
+                        <span className="text-[13.5px] font-medium text-white/90 leading-snug">{o.t}</span>
                       </div>
                     )}
                   </div>
