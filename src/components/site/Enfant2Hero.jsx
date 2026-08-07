@@ -87,10 +87,10 @@ export default function Enfant2Hero() {
             transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="absolute -bottom-8 -right-4 sm:-right-6 z-20">
             <div className="relative w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] rounded-full flex items-center justify-center bg-white shadow-[0_20px_50px_-20px_rgba(42,31,97,0.45)]">
-              <div className="absolute inset-0 rounded-full border-[3px] border-[#ff6b00]" />
+              <div className="absolute inset-0 rounded-full border-[3px] border-[#ff6b00] hidden" />
               <div className="absolute inset-[6px] rounded-full border-[3px] border-[#2a1f61] hidden" />
               <div className="flex flex-col items-center text-center px-2">
-                <Sparkles className="w-5 h-5 text-[#ff6b00]" strokeWidth={2} />
+                <Sparkles className="w-5 h-5 text-[#ff6b00] hidden" strokeWidth={2} />
                 <span className="mt-1 font-display text-[15px] sm:text-[16px] font-bold leading-tight text-[#2a1f61] uppercase tracking-wide">Expertise</span>
                 <span className="font-display text-[15px] sm:text-[16px] font-bold leading-tight text-[#ff6b00] uppercase tracking-wide">unique en France</span>
               </div>
