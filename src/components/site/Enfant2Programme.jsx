@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Heart, Gamepad2, ClipboardList } from 'lucide-react';
+import { Brain, Heart, Gamepad2, ClipboardList, Download } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 
 const modules = [
@@ -87,6 +87,23 @@ export default function Enfant2Programme() {
               </motion.div>
             )}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-12 flex justify-center">
+            <a
+              href="https://media.base44.com/files/public/6a6c5be8ce88d3267258bfc1/f2bda03ff_Formation-3.pdf"
+              download="Programme-Relaxation-Ludique-Enfant-Formaquietude.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-full bg-[#2a1f61] px-8 py-4 text-[15px] font-semibold text-white shadow-[0_16px_40px_-16px_rgba(42,31,97,0.6)] hover:bg-[#ff6b00] transition-colors duration-300">
+              <Download className="w-5 h-5 shrink-0" />
+              Télécharger le programme de formation complet
+            </a>
+          </motion.div>
         </div>
       </section>
     </>
