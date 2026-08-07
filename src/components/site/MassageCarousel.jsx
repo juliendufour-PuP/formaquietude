@@ -41,12 +41,12 @@ export default function MassageCarousel({ onSelect }) {
     <section id="massages" className="relative py-12 lg:py-14 overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=80"
+          src="https://media.base44.com/images/public/6a6c5be8ce88d3267258bfc1/15583d7ce_Depositphotos_606233854_L.jpg"
           alt="Ambiance spa apaisante"
           className="w-full h-full"
           fittingType="fill"
         />
-        <div className="absolute inset-0 bg-[#2a1f61]/82" />
+        <div className="absolute inset-0 bg-[#2a1f61]/55" />
       </div>
       <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 text-center">
         <motion.div
